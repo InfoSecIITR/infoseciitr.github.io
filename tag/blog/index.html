@@ -11,7 +11,7 @@
 
 
 
-    <title>InfosecIITR</title>
+    <title>Blog - InfosecIITR</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
@@ -25,31 +25,28 @@
     <!-- This tag outputs SEO meta+structured data and other important settings -->
     <meta name="description" content="The official website of InfosecIITR" />
     <link rel="shortcut icon" href="http://localhost:4000/assets/images/small-logo.jpg" type="image/png" />
-    <link rel="canonical" href="http://localhost:4000/about/" />
+    <link rel="canonical" href="http://localhost:4000/tag/blog/" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
      <!--title below is coming from _includes/dynamic_title-->
     <meta property="og:site_name" content="InfosecIITR" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="InfosecIITR" />
-    <meta property="og:description" content="Who We Are InfoSecIITR is a group of information security enthusiasts of Indian Institute Of technology Roorkee. It is an open group that is run entirely by the students. We are a bunch of self motivated security entusiasts who love learning and sharing their knowledge with everyone genuinely interested in" />
-    <meta property="og:url" content="http://localhost:4000/about/" />
+    <meta property="og:title" content="Blog - InfosecIITR" />
+    <meta property="og:description" content="The official website of InfosecIITR" />
+    <meta property="og:url" content="http://localhost:4000/tag/blog/" />
     <meta property="og:image" content="http://localhost:4000/assets/images/blog-cover.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/ghost" />
-    <meta property="article:author" content="https://www.facebook.com/ghost" />
-    <meta property="article:published_time" content="" />
-    <meta property="article:modified_time" content="" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="InfosecIITR" />
-    <meta name="twitter:description" content="Who We Are InfoSecIITR is a group of information security enthusiasts of Indian Institute Of technology Roorkee. It is an open group that is run entirely by the students. We are a bunch of self motivated security entusiasts who love learning and sharing their knowledge with everyone genuinely interested in" />
+    <meta name="twitter:title" content="Blog - InfosecIITR" />
+    <meta name="twitter:description" content="The official website of InfosecIITR" />
     <meta name="twitter:url" content="http://localhost:4000/" />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/blog-cover.jpg" />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="InfosecIITR" />
     <meta name="twitter:site" content="@infoseciitr" />
     <meta name="twitter:creator" content="@infoseciitr" />
-    <meta property="og:image:width" content="1400" />
-    <meta property="og:image:height" content="933" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="666" />
 
     <script type="application/ld+json">
 {
@@ -60,7 +57,7 @@
         "name": "InfosecIITR",
         "logo": "http://localhost:4000/assets/images/blog-icon.png"
     },
-    "url": "http://localhost:4000/about/",
+    "url": "http://localhost:4000/tag/blog/",
     "image": {
         "@type": "ImageObject",
         "url": "http://localhost:4000/assets/images/blog-cover.jpg",
@@ -69,9 +66,9 @@
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://localhost:4000/about/"
+        "@id": "http://localhost:4000/tag/blog/"
     },
-    "description": "Who We Are InfoSecIITR is a group of information security enthusiasts of Indian Institute Of technology Roorkee. It is an open group that is run entirely by the students. We are a bunch of self motivated security entusiasts who love learning and sharing their knowledge with everyone genuinely interested in"
+    "description": "The official website of InfosecIITR"
 }
     </script>
 
@@ -84,20 +81,23 @@
     </script> -->
 
     <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="InfosecIITR" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Tag Page" href="/feed.xml" />
 
 
 </head>
-<body class="page-template">
+<body class="tag-template">
 
     <div class="site-wrapper">
         <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
-        <!-- < default -->
-<!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template -->
+        <!-- default -->
+<!-- The tag above means - insert everything in this file into the {body} of the default.hbs template -->
 
 <!-- The big featured header, it uses blog cover image as a BG if available -->
-<header class="site-header outer">
+<!-- #tag -->
+<!-- dynamically loading backgrounds for tags,  descriptions and page titles -->
+
+
+<header class="site-header outer no-cover">
     <div class="inner">
         <nav class="site-nav">
     <div class="site-nav-left">
@@ -134,87 +134,69 @@ into the {body} of the default.hbs template -->
     </div>
 </nav>
 
+        <div class="site-header-content">
+            <h1 class="site-title">Blog</h1>
+        </div>
     </div>
 </header>
+<!-- tag -->
 
-<!-- Everything inside the #post tags pulls data from the post -->
-<!-- #post -->
-
+<!-- The main content area -->
 <main id="site-main" class="site-main outer" role="main">
     <div class="inner">
+        <div class="post-feed">
+            <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
+                <!-- Previous/next page links - only displayed on page 2+ -->
+    <div class="extra-pagination inner">
+        
+            <nav class="pagination" role="pagination">
+    
+    <span class="page-number"> Page 1 of 1 </span>
+    
+</nav>
 
-        <article class="post-full post page no-image">
+        
+    </div>
 
-            <header class="post-full-header">
-                <h1 class="post-full-title"></h1>
-            </header>
-
+    <!-- This is the post loop - each post will be output using this markup -->
+    
+    <article class="post">
+        <header class="post-header">
+            <h2 class="post-title"><a href="/welcome">Welcome</a></h2>
+        </header>
+        <section class="post-excerpt">
+            <p>Hack The Planet!
+ <a class="read-more" href="/welcome">&raquo;</a></p>
+        </section>
+        <footer class="post-meta">
             
+                
 
-            <section class="post-full-content">
-                <div id="content">
-<center>
-<h1 id="heading">Who We Are</h1>
+                
+                <!-- author -->
+                <a href='/author/ghost'>Ghost</a>
 
-</center>
-<br />
-InfoSecIITR is a group of information security enthusiasts of <b>Indian Institute Of technology Roorkee</b>. It is an open group that is run entirely by the students. We are a bunch of self motivated security entusiasts who love learning and sharing their knowledge with everyone genuinely interested in information security.
+                
+            
+            
+            <time class="post-date" datetime="2017-08-16">16 Aug 2017</time>
+        </footer>
+    </article>
+    
 
-<center>
-<h1 id="heading">What We Do</h1>
-</center>
-<br />
+    <!-- Previous/next page links - displayed on every page -->
+    
+        <nav class="pagination" role="pagination">
+    
+    <span class="page-number"> Page 1 of 1 </span>
+    
+</nav>
 
-* Meetings: We have weekly meetups where we have information security related discussions and participate in CTFs. Everyone is invited to our meetings. The schedule can be found <a href="/calendar" style="color:green">here</a>.
-<br />
-<br />
-* Capture The Flag: We <a href="https://ctftime.org/team/16691" style="color:green">actively</a> participate in CTFs. These are security competitions which require practical knowledge of topics like binary exploitation, reverse engineering, cryptography, web security, forensics, steganography etc.
-We also organize our own Capture The Flag competitions on <a href="https://backdoor.sdslabs.co" style="color:green">Backdoor</a> in collaboration with SDSLabs. The notable ones being: BackdoorCTF (our annual flagship CTF), ScytheCTF, n00bCTF (a high-school level CTF for getting started).
+    
 
-
-<center>
-<h1 id="heading">How to Join?</h1>
-</center>
-InfoSecIITR is an open group. Everyone can join in our meetings and participate with us in CTFs (as long as there is no limit on team size). If you come regularly to the meetings, you get added to the internal Slack team.
-
-<br />
-</div>
-<style type="text/css">
-	@font-face{
-      	font-family:fontis;
-    src: url("../fonts/UbuntuMono-R.ttf");
-      }
-	#content{
-		color:#d2d2d2	;
-		font-family: fontis;
-		font-size: 19px;
-		line-height: 25px;
-	}
-	#heading{
-		color:#d2d2d2;
-		font-family: Helvetica;
-	}
-
-</style>
-
-
-            </section>
-
-        </article>
-
+        </div>
     </div>
 </main>
-
-<!-- /post -->
-
-<!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs -->
-<script>
-$(function() {
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
-});
-</script>
-
 
 
         <!-- Previous/next page links - displayed on every page -->
@@ -272,7 +254,7 @@ $(function() {
     <!-- Paginator increased to "infinit" in _config.yml -->
     <!-- if paginator.posts  -->
     <!-- <script>
-        var maxPages = parseInt('');
+        var maxPages = parseInt('1');
     </script>
     <script src="/assets/js/infinitescroll.js"></script> -->
     <!-- /endif -->
@@ -295,14 +277,6 @@ $(function() {
 
 
     <!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. -->
-    
-        <script>
-$(function() {
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
-});
-</script>
-
     
 
     <!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
