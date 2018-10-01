@@ -1,3 +1,9 @@
+---
+layout: error
+current: error
+title: "404 - Page Not Found"
+permalink: 404.html
+---
 <!--
 This error template is used for all 404 errors, which might occur on your site.
 It's a good idea to keep this template as minimal as possible in terms of both file size and complexity.
@@ -8,82 +14,25 @@ It's a good idea to keep this template as minimal as possible in terms of both f
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>404 - Page Not Found</title>
+    <title>{{ page.title }}</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/built/screen.edited.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/screen.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/screen.edited.css" />
     <!-- This tag outputs SEO meta+structured data and other important settings -->
-    <meta name="description" content="The official website of InfoSecIITR" />
-    <link rel="shortcut icon" href="http://localhost:4000/assets/images/small-logo.jpg" type="image/png" />
-    <link rel="canonical" href="http://localhost:4000/404.html" />
-    <meta name="referrer" content="no-referrer-when-downgrade" />
-
-     <!--title below is coming from _includes/dynamic_title-->
-    <meta property="og:site_name" content="InfoSecIITR" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="404 - Page Not Found" />
-    <meta property="og:description" content="The official website of InfoSecIITR" />
-    <meta property="og:url" content="http://localhost:4000/404.html" />
-    <meta property="og:image" content="http://localhost:4000/assets/images/blog-cover.jpg" />
-    <meta property="article:publisher" content="https://www.facebook.com/ghost" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="404 - Page Not Found" />
-    <meta name="twitter:description" content="The official website of InfoSecIITR" />
-    <meta name="twitter:url" content="http://localhost:4000/" />
-    <meta name="twitter:image" content="http://localhost:4000/assets/images/blog-cover.jpg" />
-    <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content="InfoSecIITR" />
-    <meta name="twitter:site" content="@infoseciitr" />
-    <meta name="twitter:creator" content="@infoseciitr" />
-    <meta property="og:image:width" content="2000" />
-    <meta property="og:image:height" content="666" />
-
-    <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Website",
-    "publisher": {
-        "@type": "Organization",
-        "name": "InfoSecIITR",
-        "logo": "http://localhost:4000/assets/images/blog-icon.png"
-    },
-    "url": "http://localhost:4000/404.html",
-    "image": {
-        "@type": "ImageObject",
-        "url": "http://localhost:4000/assets/images/blog-cover.jpg",
-        "width": 2000,
-        "height": 666
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "http://localhost:4000/404.html"
-    },
-    "description": "The official website of InfoSecIITR"
-}
-    </script>
-
-    <!-- <script type="text/javascript" src="https://demo.ghost.io/public/ghost-sdk.min.js?v=724281a32e"></script>
-    <script type="text/javascript">
-    ghost.init({
-    	clientId: "ghost-frontend",
-    	clientSecret: "f84a07a72b17"
-    });
-    </script> -->
-
-    <meta name="generator" content="Jekyll 3.6.2" />
-    <link rel="alternate" type="application/rss+xml" title="404 - Page Not Found" href="/feed.xml" />
-
+    {% include head.html %}
 </head>
 <body class="error-template">
     <div class="site-wrapper">
 
-        <header class="site-header outer no-cover">
+        <header class="site-header outer {% if page.cover %}" style="background-image: url({{ page.cover | prepend: site.baseurl | replace: '//','/'}})){% else %}no-cover{% endif %}">
             <div class="inner">
                 <nav class="site-nav-center">
-                    
-                        <a class="site-nav-logo" href="/"><img src="/assets/images/blog-icon.png" alt="InfoSecIITR" /></a>
-                    
+                    {% if site.logo %}
+                        <a class="site-nav-logo" href="{{ site.baseurl }}"><img src="{{site.baseurl | append: site.logo | replace:'//','/' }}" alt="{{ site.title }}" /></a>
+                    {% else %}
+                        <a class="site-nav-logo" href="{{ site.baseurl }}">{{ site.title }}</a>
+                    {% endif %}
                 </nav>
             </div>
         </header>
@@ -94,7 +43,7 @@ It's a good idea to keep this template as minimal as possible in terms of both f
                 <section class="error-message">
                     <h1 class="error-code">404</h1>
                     <p class="error-description">Page not found</p>
-                    <a class="error-link" href="/">Go to the front page →</a>
+                    <a class="error-link" href="{{ site.baseurl }}">Go to the front page →</a>
                 </section>
             </div>
         </main>
@@ -104,47 +53,7 @@ It's a good idea to keep this template as minimal as possible in terms of both f
             <div class="inner">
                 <div class="post-feed">
                     <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
-                    
-
-    
-    
-        <article class="post-card  no-image">
-            
-            <div class="post-card-content">
-                <a class="post-card-content-link" href="/welcome">
-                    <header class="post-card-header">
-                        
-                            
-                                
-                                    <span class="post-card-tags">Blog</span>
-                                
-                            
-                        
-
-                        <h2 class="post-card-title">Welcome</h2>
-                    </header>
-                    <section class="post-card-excerpt">
-                        <p>Hack The Planet!
-</p>
-                    </section>
-                </a>
-                <footer class="post-card-meta">
-                    
-                        
-                            
-                            <img class="author-profile-image" src="/assets/images/ghost.png" alt="Ghost" />
-                            
-                            <span class="post-card-author">
-                                <a href="/author/ghost/">Ghost</a>
-                            </span>
-                        
-                    
-                </footer>
-            </div>
-        </article>
-    
-
-
+                    {%  include post-card-error.html %}
                 </div>
             </div>
         </aside>
@@ -153,6 +62,3 @@ It's a good idea to keep this template as minimal as possible in terms of both f
     </div>
 </body>
 </html>
-
-
-

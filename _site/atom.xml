@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> - Articles</title>
+    <description>The official website of InfosecIITR</description>
+    <link>
+    http://localhost:4000/</link>
+    
+      
+      <item>
+        <title>InfoSec Resources for Beginner</title>
+        
+          <description>&lt;h3 id=&quot;general-information-security-beginner-book&quot;&gt;General Information-Security Beginner Book&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://drive.google.com/file/d/1HOsMnF22YYbV-iArNl7tKLKQD_MGyxsI/view&quot;&gt;https://leanpub.com/ltr101-breaking-into-infosec&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Sun, 30 Sep 2018 00:00:00 +0530</pubDate>
+        <link>
+        http://localhost:4000//2018/09/30/basic-infosec-resources.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2018/09/30/basic-infosec-resources.html</guid>
+      </item>
+      
+    
+  </channel>
+</rss>

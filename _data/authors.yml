@@ -1,0 +1,23 @@
+template-author:
+  username: template-author # same as above
+  name: AUTHOR NAME
+  location: False # Roorkee, IN
+  url_full: False #http://example.com
+  url: False #example.com
+  bio: False # My bio
+  picture: False #assets/images/authors/xyz.jpg
+  facebook: False #user.name
+  twitter: False # handel
+  cover: False #assets/images/authors/xyz-cover.jpg
+
+InfoSecIITR:
+  username: InfoSecIITR # same as above
+  name: InfoSecIITR Team
+  location: False # Roorkee, IN
+  url_full: https://infoseciitr.github.io
+  url: False #example.com
+  bio: Team of InfoSecIITR
+  picture: /assets/images/authors/infoseciitr.png
+  facebook: InfoSecIITR
+  twitter: infoseciitr
+  cover: /assets/images/authors/infoseciitr-cover.png

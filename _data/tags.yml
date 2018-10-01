@@ -1,0 +1,13 @@
+template-tag:
+  name: Display name here
+  description: Tag description
+  cover: False # url to cover if any image
+
+reading-material:
+  name: Reading Material
+  description: Posts regarding reading material
+  cover: False
+beginner:
+  name: Beginner
+  description: Beginner related posts
+  cover: "/assets/images/tags/beginner-cover.jpeg"
