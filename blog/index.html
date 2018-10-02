@@ -1,0 +1,181 @@
+---
+layout: default
+current: blog
+navigation: True
+title: Blog
+logo: 'assets/images/small-logo.jpg'
+class: page-template
+subclass: 'post page'
+---
+
+<!-- <div class="row">
+    <div class="col-lg-12 text-center">
+        <div class="navy-line"></div>
+        <h1>Latest Posts</h1>
+    </div>
+</div> -->
+
+<header class="site-header outer">
+    <div class="inner">
+        {% include site-nav.html %}
+    
+        <div class="site-header-content">
+            <h1 class="site-title">{{ page.title | capitalizeall }}</h1>
+        </div>
+    </div>
+</header>
+
+{% assign post_arr = paginator.posts %}
+<main id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <div class="post-feed">
+            <!-- The tag below includes the markup for each post - partials/post-card.hbs -->
+            <!-- takes array as posts as post_arr -->
+            {% include post-card.html %}
+        </div>
+    </div>
+</main>
+<!-- <style type="text/css">
+.post-cover-box{
+    display: block;
+    padding: 3%;
+    padding-left:5%;
+    border-color: #eeeeee;
+    border-style: solid none none none;
+    border-width: 1.5px; 
+    opacity: 1;
+}
+.post-cover-box:hover{
+    background-color: #eeeeee;
+    opacity: 0.6;
+}
+
+.post-link-title{
+    font-weight: 100;
+    font-size: 120%;
+}
+</style> -->
+
+<!-- Pagination links -->
+<!-- Bootstrap is only used here so Instead relevant styling is posted here from bootstrap -->
+<style type="text/css">
+@media (min-width: 992px)
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+    float: left;
+}
+
+@media (min-width: 992px)
+.col-md-2 {
+    width: 16.66666667%;
+}
+@media (min-width: 992px)
+.col-md-8 {
+    width: 66.66666667%;
+}
+
+.col-md-1{
+    width:8.33333333%;
+}
+.col-md-8{
+    width:66.66666667%;
+}
+.col-md-2{
+    width:16.66666667%;
+}
+.col-md-1 .col-md-2 .col-md-8{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.pager {
+    padding-left: 0;
+    margin: 20px 0;
+    text-align: center;
+    list-style: none;
+}
+
+.pager li{
+    display: inline;
+}
+.pager li > a{
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    text-decoration: none; It's not from bootstrap. Here to remove underline
+}
+
+.custom-left{
+    width: auto;
+    position: fixed;
+    top: 50%;
+    left: 2px;
+    z-index: 9999;
+}
+.custom-left > ul > li > a{
+    background-color: #212121;
+}
+.custom-left > ul > li > a:hover{
+    background-color: #212121;
+}
+.custom-right{
+    width: auto;
+    position: fixed;
+    top: 50%;
+    right: 2px;
+    z-index: 9999;
+}
+.custom-right > ul > li > a{
+    background-color: #212121;
+}
+.custom-right > ul > li > a:hover{
+    background-color: #212121;
+}
+</style>
+
+<div class="col-md-1 custom-left" style="text-align: left">
+        {% if paginator.previous_page %}
+            <ul class="pager">
+            <li>
+                <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//','/' }}" onmouseenter="hoverEntryHandler(this,'Newer posts')" onmouseleave="hoverExitHandler(this,'Newer posts')">
+                    <i class=" fa fa-angle-double-left" id='new-post-icon'></i>
+                </a>
+            </li>
+            </ul>
+        {% endif %}
+</div>
+
+<div class="col-md-1 custom-right" style="text-align: right">
+    {% if paginator.next_page %}
+        <ul class="pager">
+        <li>
+            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//','/' }}" onmouseenter="hoverEntryHandler(this,'Older posts',0)" onmouseleave="hoverExitHandler(this,'Older posts')">
+                <i class=" fa fa-angle-double-right"></i>
+            </a>
+        </li>
+        </ul>
+    {% endif %}
+</div>
+
+<div class="row" style="text-align: center;font-size: 150%;padding-bottom: 3%; width:100%">
+        Page {{ paginator.page }} of {{ paginator.total_pages }}
+</div>
+
+<script type="text/javascript">
+function hoverEntryHandler(elem,text,addToBack = 1){
+    if(addToBack){
+        elem.innerHTML += text;
+    }
+    else{
+        elem.innerHTML = text + elem.innerHTML;
+    }
+    return;
+}
+function hoverExitHandler(elem,text){
+    elem.innerHTML = elem.innerHTML.replace(text,'');
+    return;
+}
+
+</script>

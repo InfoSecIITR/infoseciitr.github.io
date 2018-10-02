@@ -1,0 +1,26 @@
+<nav class="site-nav">
+    <div class="site-nav-left">
+        {% if page.current != 'home' %}
+            {% if site.logo %}
+                <a class="site-nav-logo" href="{{ site.baseurl }}"><img src="{{ site.logo  | prepend: site.baseurl | replace: '//','/'}}" alt="{{ site.title }}" /></a>
+            {% else %}
+                <a class="site-nav-logo" href="{{ site.baseurl }}">{{ site.title }}</a>
+            {% endif %}
+        {% endif %}
+
+            {% include navigation.html %}
+
+    </div>
+    <div class="site-nav-right">
+        <div class="social-links">
+            {% if site.facebook %}
+                <a class="social-link social-link-fb" href="https://www.facebook.com/InfoSecIITR/" target="_blank" rel="noopener">{% include facebook.html %}</a>
+            {% endif %}
+            {% if site.twitter %}
+                <a class="social-link social-link-tw" href="https://twitter.com/{{ site.twitter }}" target="_blank" rel="noopener">{% include twitter.html %}</a>
+            {% endif %}
+
+        </div>
+        
+    </div>
+</nav>

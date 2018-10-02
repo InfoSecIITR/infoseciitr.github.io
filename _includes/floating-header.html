@@ -1,0 +1,17 @@
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="{{ site.baseurl }}">
+            {% if site.logo_dark %}
+                <img src="{{ site.baseurl }}{{ site.logo_dark | remove_first: '/'}}" alt="{{ site.title }} icon" />
+            {% endif %}
+            <span>{{ site.title }}</span>
+        </a>
+    </div>
+    <span class="floating-header-divider">&mdash;</span>
+    <div class="floating-header-title">{{ page.title }}</div>
+    <progress class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
