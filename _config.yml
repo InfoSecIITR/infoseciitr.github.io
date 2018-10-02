@@ -6,7 +6,7 @@ paginate_path: "/blog/page:num/"
 language: 'en-uk'
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
-url: "http://localhost:8080/" #Value gets overwritten at time of deployment by jekyll
+url: "https://infoseciitr.github.io/" #Value gets overwritten at time of deployment by jekyll in CNAME file used
 baseurl: "/l33t/../" # This value is replaced to empty string by github if set to '/'
 
 # Website info
