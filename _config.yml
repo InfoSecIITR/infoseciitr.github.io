@@ -7,12 +7,12 @@ language: 'en-uk'
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
 url: "http://localhost:8080/" #Value gets overwritten at time of deployment by jekyll
-baseurl: "/bl0g/../"
+baseurl: "/l33t/../" # This value is replaced to empty string by github if set to '/'
 
 # Website info
 title: InfosecIITR
 description: The official website of InfosecIITR
-cover: /assets/images/infosec.jpeg
+# cover: /assets/images/infosec.jpeg
 logo: /assets/images/infosec.jpeg
 logo_dark: /assets/images/small-logo.jpg
 favicon: /assets/images/small-logo.jpg

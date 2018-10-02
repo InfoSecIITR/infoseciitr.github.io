@@ -20,4 +20,4 @@ InfoSecIITR:
   picture: /assets/images/authors/infoseciitr.png
   facebook: InfoSecIITR
   twitter: infoseciitr
-  cover: /assets/images/authors/infoseciitr-cover.png
+  cover: False #/assets/images/authors/infoseciitr-cover.png
