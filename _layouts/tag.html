@@ -10,7 +10,7 @@ logo: 'assets/images/small-logo.jpg'
 <!-- #tag -->
 {% assign tag_name = page.tagname | downcase | replace: ' ','-' %}
 
-<header class="site-header outer {% if site.data.tags[tag_name].cover or page.cover %}" style="background-image: url({% if site.data.tags[tag_name].cover %}{{ site.data.tags[tag_name].cover | prepend:site.baseurl |replace: '//','/' }}{% else %}{{ page.cover | prepend:site.baseurl |replace: '//','/' }}{% endif%}) {% else %}no-cover{% endif %}">
+<header class="site-header outer {% if site.data.tags[tag_name].cover or page.cover %}" style="background-image: url({% if site.data.tags[tag_name].cover %}{{ site.data.tags[tag_name].cover | relative_url }}{% else %}{{ page.cover | relative_url }}{% endif%}) {% else %}no-cover{% endif %}">
     <div class="inner">
         {% include site-nav.html %}
         <div class="site-header-content">

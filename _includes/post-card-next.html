@@ -1,12 +1,12 @@
 
     <article class="post-card {{ page.next.class }}{% unless page.next.cover %} no-image{% endunless %}">
         {% if page.next.cover %}
-            <a class="post-card-image-link" href="{{ site.baseurl }}{{ page.next.url | remove_first: '/' }}">
-                <div class="post-card-image" style="background-image: url({{ site.baseurl }}{{ page.next.cover | remove_first: '/'}})"></div>
+            <a class="post-card-image-link" href="{{ page.next.url | relative_url }}">
+                <div class="post-card-image" style="background-image: url({{ page.next.cover | relative_url }})"></div>
             </a>
         {% endif %}
         <div class="post-card-content">
-            <a class="post-card-content-link" href="{{ site.baseurl }}{{ page.next.url | remove_first: '/' }}">
+            <a class="post-card-content-link" href="{{ page.next.url | relative_url }}">
                 <header class="post-card-header">
                     {% if page.next.tags.size > 0 %}
                         {% for tag in page.next.tags %}
@@ -28,10 +28,10 @@
                 {% for author in site.data.authors %}
                     {% if author[1].username == page.next.author %}
                         {% if author[1].picture %}
-                        <img class="author-profile-image" src="{{ site.baseurl }}{{ author[1].picture | remove_first: '/'}}" alt="{{ author[1].name }}" />
+                        <img class="author-profile-image" src="{{ author[1].picture | relative_url }}" alt="{{ author[1].name }}" />
                         {% endif %}
                         <span class="post-card-author">
-                            <a href="{{ site.baseurl }}author/{{ page.next.author }}/">{{ author[1].name }}</a>
+                            <a href="{{ 'author/' | append: page.next.author | relative_url }}/">{{ author[1].name }}</a>
                         </span>
                     {% endif %}
                 {% endfor %}

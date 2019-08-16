@@ -1,4 +1,4 @@
 ---
 ---
 User-agent: *
-Sitemap: {{site.baseurl | prepend: site.url }}sitemap.xml 
+Sitemap: {{ 'sitemap.xml' | absolute_url }}
