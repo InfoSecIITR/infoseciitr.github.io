@@ -62,14 +62,13 @@
 
         <!-- The footer at the very bottom of the screen -->
         <footer class="site-footer outer">
-            <div class="site-footer-content inner">
+            <div class="site-footer-content inner" style="max-width:100%">
+                <div style="flex: 1"></div>
                 <section class="copyright" style="margin: auto;"><span><a href="{{ '/' | relative_url }}">InfoSecIITR</a> &copy; {{  site.time | date: '%Y' }}</section>
                
-                <nav class="site-footer-nav">
-                
+                <nav class="site-footer-nav" style="flex: 1; justify-content: flex-end">
                     <a href="https://www.facebook.com/InfoSecIITR/" target="_blank" rel="noopener">Facebook</a>
-                    <a href="https://twitter.com/{{ site.twitter }}" target="_blank" rel="noopener">Twitter</a>
-                    
+                    <a href="https://twitter.com/{{ site.twitter }}" target="_blank" rel="noopener">Twitter</a>    
                 </nav>
             </div>
         </footer>
