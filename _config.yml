@@ -7,7 +7,7 @@ language: 'en-uk'
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
 url: "https://infoseciitr.github.io" #Value gets overwritten at time of deployment by jekyll in CNAME file used
-baseurl: "" # This value is replaced to empty string by github if set to '/'
+baseurl: "/infoseciitr.github.io" # This value is replaced to empty string by github if set to '/'
 
 # Website info
 title: InfosecIITR
