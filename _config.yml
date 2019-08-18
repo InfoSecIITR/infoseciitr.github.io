@@ -24,7 +24,7 @@ navigation: True # show the navbar links
 subscribers: False # you need to connect an external service for this to work,
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
-twitter: infoseciitr # replace by your username
+twitter: InfoSecIITR # replace by your username
 facebook: InfoSecIITR # replace by your username
 
 # Disqus
@@ -43,7 +43,10 @@ google_analytics: # replace with your GA tracking identifier
 # Tags' info in `_data/tags_info.yml`
 
 # gems and other configs
-plugins: [jekyll-paginate, jekyll-feed, jekyll-sitemap]
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
 
 feed:
   path: feed.xml
