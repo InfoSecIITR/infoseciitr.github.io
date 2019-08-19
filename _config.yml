@@ -6,8 +6,8 @@ paginate_path: "/blog/page:num/"
 language: 'en-uk'
 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)
-url: "https://infoseciitr.github.io/" #Value gets overwritten at time of deployment by jekyll in CNAME file used
-baseurl: "/l33t/../" # This value is replaced to empty string by github if set to '/'
+url: "https://infoseciitr.github.io" #Value gets overwritten at time of deployment by jekyll in CNAME file used
+baseurl: "/infoseciitr.github.io" # This value is replaced to empty string by github if set to '/'
 
 # Website info
 title: InfosecIITR
@@ -24,7 +24,7 @@ navigation: True # show the navbar links
 subscribers: False # you need to connect an external service for this to work,
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
-twitter: infoseciitr # replace by your username
+twitter: InfoSecIITR # replace by your username
 facebook: InfoSecIITR # replace by your username
 
 # Disqus
@@ -43,7 +43,10 @@ google_analytics: # replace with your GA tracking identifier
 # Tags' info in `_data/tags_info.yml`
 
 # gems and other configs
-plugins: [jekyll-paginate, jekyll-feed, jekyll-sitemap]
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
 
 feed:
   path: feed.xml

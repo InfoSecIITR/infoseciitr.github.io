@@ -5,10 +5,10 @@ template-author:
   url_full: False #http://example.com
   url: False #example.com
   bio: False # My bio
-  picture: False #assets/images/authors/xyz.jpg
+  picture: False #/assets/images/authors/xyz.jpg
   facebook: False #user.name
   twitter: False # handel
-  cover: False #assets/images/authors/xyz-cover.jpg
+  cover: False #/assets/images/authors/xyz-cover.jpg
 
 InfoSecIITR:
   username: InfoSecIITR # same as above

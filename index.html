@@ -9,12 +9,12 @@ navigation: True
 into the {body} of the default.hbs template -->
 
 <!-- The big featured header, it uses blog cover image as a BG if available -->
-<header class="site-header outer {% if page.cover or site.cover %}" style="background-image:  url({% if page.cover %}{{ page.cover |prepend: site.baseurl | replace: '//','/' }}{% elsif site.cover %}{{ site.cover |prepend: site.baseurl | replace: '//','/' }}{% endif %}) {% else %}no-cover{% endif %}">
+<header class="site-header outer {% if page.cover or site.cover %}" style="background-image:  url({% if page.cover %}{{ page.cover | relative_url }}{% elsif site.cover %}{{ site.cover | relative_url }}{% endif %}) {% else %}no-cover{% endif %}">
     <div class="inner">
         <div class="site-header-content">
             <h1 class="site-title">
                 {% if site.logo %}
-                    <!-- <img class="site-logo" src="{{ site.logo | prepend: site.baseurl | replace: '//','/'}}" alt="{{ site.title }}"/> -->
+                    <!-- <img class="site-logo" src="{{ site.logo | relative_url }}" alt="{{ site.title }}"/> -->
                     {{ site.title }}
                 {% else %}
                     {{ site.title }}

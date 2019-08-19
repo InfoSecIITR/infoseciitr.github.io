@@ -31,12 +31,12 @@ logo: 'assets/images/ghost.png'
 
 
 
-<header class="site-header outer {% if author.cover or page.cover %}" style="background-image: url({% if author.cover %}{{ author.cover | prepend: site.baseurl | replace: '//','/'}}{% elsif page.cover %}{{ page.cover | prepend: site.baseurl | replace: '//','/'}}{% endif %}) {% else %}no-cover{% endif %}">
+<header class="site-header outer {% if author.cover or page.cover %}" style="background-image: url({% if author.cover %}{{ author.cover | relative_url }}{% elsif page.cover %}{{ page.cover | relative_url }}{% endif %}) {% else %}no-cover{% endif %}">
     <div class="inner">
         {% include site-nav.html %}
         <div class="site-header-content">
             {% if author.picture %}
-                <img class="author-profile-image" src="{{ author.picture | prepend: site.baseurl | replace: '//','/'}}" alt="{{ page.author }}" />
+                <img class="author-profile-image" src="{{ author.picture | relative_url }}" alt="{{ page.author }}" />
             {% endif %}
             <h1 class="site-title">{{ author.name }}</h1>
             {% if author.bio %}
@@ -58,7 +58,7 @@ logo: 'assets/images/ghost.png'
                 {% if author.facebook %}
                     <a class="social-link social-link-fb" href="https://facebook.com/{{ author.facebook }}" target="_blank" rel="noopener">{% include facebook.html %}</a>
                 {% endif %}
-                <a class="social-link social-link-rss" href="https://feedly.com/i/subscription/feed/{{ site.url }}{{ site.baseurl }}author/{{ page.author }}/feed.xml" target="_blank" rel="noopener">{% include rss.html %}</a>
+                <!-- <a class="social-link social-link-rss" href="https://feedly.com/i/subscription/feed/{{ site.url }}{{ site.baseurl }}/author/{{ page.author }}/feed.xml" target="_blank" rel="noopener">{% include rss.html %}</a> -->
             </div>
         </div>
     </div>
