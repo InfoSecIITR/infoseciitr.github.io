@@ -12,9 +12,9 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles'n'Scripts -->
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/screen.css" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/screen.edited.css" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/built/syntax.css" />
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/built/screen.css' | relative_url }}" />
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/built/screen.edited.css' | relative_url }}" />
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/built/syntax.css' | relative_url }}" />
     <!-- highlight.js -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <style>.hljs { background: none; }</style>
@@ -24,6 +24,22 @@
 
 </head>
 <body class="{% if paginator.page > 1 %}paged archive-template{% elsif page.class %}{{ page.class }}{% else %}home-template{% endif %}">
+
+    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="{{ 'assets/js/jquery.fitvids.js' | relative_url }}"></script>
+    <!-- <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script> -->
+    <!-- highlight.js -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script> -->
+    <script>$(document).ready(function() {
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+    });</script>
 
     <div class="site-wrapper">
         <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
@@ -46,14 +62,13 @@
 
         <!-- The footer at the very bottom of the screen -->
         <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <section class="copyright" style="margin: auto;"><span><a href="{{ site.baseurl }}">InfoSecIITR</a> &copy; {{  site.time | date: '%Y' }}</section>
+            <div class="site-footer-content inner" style="max-width:100%">
+                <div style="flex: 1"></div>
+                <section class="copyright" style="margin: auto;"><span><a href="{{ '/' | relative_url }}">InfoSecIITR</a> &copy; {{  site.time | date: '%Y' }}</section>
                
-                <nav class="site-footer-nav">
-                
+                <nav class="site-footer-nav" style="flex: 1; justify-content: flex-end">
                     <a href="https://www.facebook.com/InfoSecIITR/" target="_blank" rel="noopener">Facebook</a>
-                    <a href="https://twitter.com/{{ site.twitter }}" target="_blank" rel="noopener">Twitter</a>
-                    
+                    <a href="https://twitter.com/{{ site.twitter }}" target="_blank" rel="noopener">Twitter</a>    
                 </nav>
             </div>
         </footer>
@@ -66,7 +81,7 @@
             <a class="subscribe-overlay-close" href="#"></a>
             <div class="subscribe-overlay-content">
                 {% if site.logo %}
-                    <img class="subscribe-overlay-logo" src="{{ site.logo | prepend: site.baseurl | replace: '//','/'}}" alt="{{ site.title }}" />
+                    <img class="subscribe-overlay-logo" src="{{ site.logo | relative_url }}" alt="{{ site.title }}" />
                 {% endif %}
                 <h1 class="subscribe-overlay-title">Subscribe to {{ site.title }}</h1>
                 <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
@@ -75,37 +90,19 @@
         </div>
     {% endif %}
 
-    <!-- highlight.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.10.0/components/prism-abap.min.js"></script>
-    <script>$(document).ready(function() {
-      $('pre code').each(function(i, block) {
-        hljs.highlightBlock(block);
-      });
-    });</script>
-
-    <!-- jQuery + Fitvids, which makes all video embeds responsive -->
-    <script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous">
-    </script>
-    <script type="text/javascript" src="{{ site.baseurl }}assets/js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="https://demo.ghost.io/assets/js/jquery.fitvids.js?v=724281a32e"></script>
-
-
     <!-- Paginator increased to "infinit" in _config.yml -->
     <!-- if paginator.posts  -->
     <!-- <script>
         var maxPages = parseInt('{{ paginator.total_pages }}');
     </script>
-    <script src="{{ site.baseurl }}assets/js/infinitescroll.js"></script> -->
+    <script src="{{ '/' | relative_url }}assets/js/infinitescroll.js"></script> -->
     <!-- /endif -->
 
     {% if paginator.total_pages > site.paginate %}
-    <script>
-        var maxPages = parseInt('{{ paginator.total_pages }}');
-    </script>
-    <script src="{{ site.baseurl }}assets/js/infinitescroll.js"></script>
+        <script>
+            var maxPages = parseInt('{{ paginator.total_pages }}');
+        </script>
+        <script src="{{ 'assets/js/infinitescroll.js' | relative_url }}"></script>
     {% endif %}
 
 

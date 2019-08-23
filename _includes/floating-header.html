@@ -1,8 +1,8 @@
 <div class="floating-header">
     <div class="floating-header-logo">
-        <a href="{{ site.baseurl }}">
+        <a href="{{ '/' | relative_url }}">
             {% if site.logo_dark %}
-                <img src="{{ site.baseurl }}{{ site.logo_dark | remove_first: '/'}}" alt="{{ site.title }} icon" />
+                <img src="{{ site.logo_dark | remove_first: '/' | relative_url }}" alt="{{ site.title }} icon" />
             {% endif %}
             <span>{{ site.title }}</span>
         </a>

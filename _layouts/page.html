@@ -29,7 +29,7 @@ into the {body} of the default.hbs template -->
             </header>
 
             {% if page.cover %}
-            <figure class="post-full-image" style="background-image: url({{ page.cover | prepend: site.baseurl | replace: '//','/'}})">
+            <figure class="post-full-image" style="background-image: url({{ page.cover | relative_url }})">
             </figure>
             {% endif %}
 

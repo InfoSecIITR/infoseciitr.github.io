@@ -30,10 +30,11 @@ into the {body} of the default.hbs template -->
                     {% if page.tags.size > 0 %}
                         <span class="date-divider">/</span>
                         {% for tag in page.tags %}
+                            {% assign tag_url_name = tag | downcase | replace: ' ', '-' %}
                             {% if forloop.index == page.tags.size %}
-                               <a href='{{ site.baseurl }}tag/{{ tag | downcase | replace: ' ', '-' }}'>{{ tag | upcase }}</a>
+                               <a href='{{ 'tag/' | append: tag_url_name | relative_url }}'>{{ tag | upcase }}</a>
                             {% else %}
-                               <a href='{{ site.baseurl }}tag/{{ tag | downcase | replace: ' ', '-' }}'>{{ tag | upcase }}</a>,
+                               <a href='{{ 'tag/' | append: tag_url_name | relative_url }}'>{{ tag | upcase }}</a>,
                             {% endif %}
                         {% endfor %}
                     {% endif %}
@@ -42,7 +43,7 @@ into the {body} of the default.hbs template -->
             </header>
 
             {% if page.cover %}
-            <figure class="post-full-image" style="background-image: url({{ page.cover | prepend: site.baseurl | replace: '//','/'}})">
+            <figure class="post-full-image" style="background-image: url({{ page.cover | relative_url }})">
             </figure>
             {% endif %}
 
@@ -76,7 +77,7 @@ into the {body} of the default.hbs template -->
                     <div id="disqus_thread"></div>
                     <script>
                         var disqus_config = function () {
-                            this.page.url = '{{ site.url }}{{ site.baseurl }}';
+                            this.page.url = '{{ '/' | absolute_url }}';
                             this.page.identifier = '{{ site.title }}';
                         };
                         (function() {

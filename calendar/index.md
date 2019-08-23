@@ -17,7 +17,7 @@ Add calendar to your account to get notifications/updates about events. Use + bu
 <style type="text/css">
 	#mapframe{
 		background-color: inherit;
-		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1'><text x='2' y='30' font-size='40'>Calander loading....</text></svg>");
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1'><text x='2' y='30' font-size='40'>Calendar loading....</text></svg>");
 		background-repeat: no-repeat;
 		background-position: center top;
 	}
