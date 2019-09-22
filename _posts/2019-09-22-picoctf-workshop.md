@@ -4,7 +4,7 @@ current: post
 cover: False # Use URL here if you want to add any image as cover
 navigation: True
 title: "Hack for Prize"
-date: 2019-09-22 00:50:55 +0530
+date: 2019-09-22 19:35:26 +0530
 tags: ['beginner']
 class: post-template
 subclass: 'post tag'
