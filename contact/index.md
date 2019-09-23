@@ -9,7 +9,8 @@ subclass: 'post page'
 ---
 
 
-Getting in Touch. We'd love to contact you, send us an email!
+Have any kind of queries or need help? Have suggestions? Want to contribute to the resources? We'd love to contact you,
+send us an email or message us!
 
 <i class="fa fa-envelope"></i> [infoseciitr@gmail.com](mailto:infoseciitr@gmail.com)
 
@@ -17,4 +18,3 @@ Getting in Touch. We'd love to contact you, send us an email!
 
 <i class="fa fa-facebook"></i> [{{site.facebook}}](https://www.facebook.com/{{site.facebook}})
 
-Free feel to ask for any kind of help and query. Have suggestions? Want to contribute to the resources? Message us.
