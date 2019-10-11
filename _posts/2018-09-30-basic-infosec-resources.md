@@ -30,7 +30,7 @@ author: 'InfoSecIITR'
 
 
 ### Web Exploitation
-  * [Web hacker's handbook](https://leaksource.files.wordpress.com/2014/08/the-web-application-hackers-handbook.pdf)
+  * [Web hacker's handbook](https://archive.org/download/TheWebApplicationHackersHandbook2ndEdition/The%20web%20application%20hackers%20handbook%20%282nd%20Edition%29.pdf)
 
 ###### Important: For each category, solve previous CTF problems as many as possible.
 
