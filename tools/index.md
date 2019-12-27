@@ -61,3 +61,5 @@ This list is a mirror. Original list mantained [here](https://github.com/InfoSec
 + [requests](https://github.com/requests/requests) - python library used for sending HTTP requests
 + [Wfuzz](http://www.edge-security.com/wfuzz.php) - to detect directories and pages on the server using common wordlists.
 + [XSS Payloads](https://github.com/nettitude/xss_payloads)
++ [Jwt_tool](https://github.com/ticarpi/jwt_tool) - for manipulating JSON Web Tokens
++ [Dirsearch](https://github.com/maurosoria/dirsearch) - Web path scanner
