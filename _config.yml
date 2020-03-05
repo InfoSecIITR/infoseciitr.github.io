@@ -10,8 +10,8 @@ url: "https://infoseciitr.in" #Value gets overwritten at time of deployment by j
 baseurl: "" # This value is replaced to empty string by github if set to '/'
 
 # Website info
-title: InfosecIITR
-description: The official website of InfosecIITR
+title: InfoSecIITR
+description: The official website of InfoSecIITR
 # cover: /assets/images/infosec.jpeg
 logo: /assets/images/infosec.jpeg
 logo_dark: /assets/images/small-logo.jpg
