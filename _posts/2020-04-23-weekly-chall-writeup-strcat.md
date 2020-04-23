@@ -1,4 +1,15 @@
-# Writeup for Strcat challenge
+---
+layout: post
+current: post
+cover: False # Use URL here if you want to add any image as cover
+navigation: True
+title: "Backdoor-Weekly-Challenge writeup - strcat"
+date: 2020-04-23 12:24:00 +0530
+tags: ['writeups','weekly-challenges']
+class: post-template
+subclass: 'post tag'
+author: 'InfoSecIITR'
+---
 
 We are given a 64-bit binary with ASLR (but no PIE). Looking through the functionality of the binary, it asks us for a *name*, a *desc*(which was a malloc-ed chunk of 0x20 size) and then through a menu prompt, let's us concatenate stuff to this *name* buffer (which has a `maxlen` of `0x80` btw) and to the *desc* chunk. There is also a *win* fucntion which simply prints the flag on the screen. So, our objective is simply to call the win function.
 
