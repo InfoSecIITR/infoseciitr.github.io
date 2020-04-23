@@ -11,9 +11,6 @@ subclass: 'post tag'
 author: 'InfoSecIITR'
 ---
 
-
-# code-me-if-you-can : Writeup
-
 ## Challenge Description:
 The challenge description says:
 >What is W ^ X policy? Meh, i don't care
