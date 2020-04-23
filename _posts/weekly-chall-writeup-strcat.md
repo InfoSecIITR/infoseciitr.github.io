@@ -4,9 +4,72 @@ We are given a 64-bit binary with ASLR (but no PIE). Looking through the functio
 
 One obvious vulnerability was a format string vulnerability in the `main` function where `printf(name)` and `printf(desc)` are used. Now, since these buffers are in the BSS and heap section, so a format string was somewhat tricky(You can try that though).
 
-![alt text](readline_disasm.png "Title")
+```c
+ulong readline(void *param_1,int param_2)
 
-![alt text](main_disasm.png "Title")
+{
+  uint uVar1;
+  size_t sVar2;
+  
+  read(0,param_1,(long)param_2);
+  sVar2 = strlen(name);
+  uVar1 = (int)sVar2 - 1;
+  *(undefined *)((long)param_1 + (long)(int)uVar1) = 0;
+  return (ulong)uVar1;
+}
+```
+readline function disassembly using Ghidra
+
+```c
+
+void main(void)
+
+{
+  int iVar1;
+  size_t sVar2;
+  size_t sVar3;
+  
+  setup();
+  puts("My strcat");
+  maxlen = 0x80;
+  printf("Name: ");
+  iVar1 = readline(name,0x80);
+  maxlen = maxlen - iVar1;
+  desc = (char *)malloc(0x20);
+  printf("Desc: ");
+  readline(desc,0x20);
+  do {
+    while( true ) {
+      print_menu();
+      printf("> ");
+      iVar1 = read_int32();
+      if (iVar1 != 2) break;
+      printf("Desc: ");
+      readline(desc,0x20);
+    }
+    if (iVar1 == 3) {
+      printf(name);
+      printf(desc);
+      putchar(10);
+    }
+    else {
+      if (iVar1 == 1) {
+        printf("Name: ");
+        iVar1 = maxlen;
+        sVar2 = strlen(name);
+        sVar3 = strlen(name);
+        iVar1 = readline(name + sVar3,(ulong)(uint)(iVar1 - (int)sVar2),sVar3);
+        maxlen = maxlen - iVar1;
+      }
+      else {
+        puts("Invalid");
+      }
+    }
+  } while( true );
+}
+
+```
+main function disassembly using ghidra
 
  Another (not so obvious) vulnerability was in the `readline` function which calculated the length of the string as `len = strlen(string)` and returned the value `len - 1` . Now in the `main` function, when we concatenate something to the *name* buffer, `maxlen` is updated to
 `maxlen = maxlen - readline(name)`.
