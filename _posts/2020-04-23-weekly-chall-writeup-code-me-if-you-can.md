@@ -4,11 +4,11 @@ current: post
 cover: False # Use URL here if you want to add any image as cover
 navigation: True
 title: Backdoor-Weekly-Challenge writeup - Code me If You Can
-date: 2020-04-23 12:23:00
+date: 2020-04-23 12:23:00 +0530
 tags: ['writeups','weekly-challenges']
 class: post-template
 subclass: 'post tag'
-author: 'Th3F0x'
+author: 'InfoSecIITR'
 ---
 
 
