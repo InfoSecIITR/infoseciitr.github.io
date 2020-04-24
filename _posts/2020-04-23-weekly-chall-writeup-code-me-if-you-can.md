@@ -176,7 +176,7 @@ $cs: 0x0023 $ss: 0x002b $ds: 0x002b $es: 0x002b $fs: 0x0000 $gs: 0x0063
 gef➤  
 gef➤  
 ```
-You can see that our program crashed due to a segmentation fault, which means that it tried to access invalid memory . This happened because we overwrote the stack pointer with some garbage which didn't point to any valid memory. We can see this value with `x/wx $eip`.
+You can see that our program crashed due to a segmentation fault, which means that it tried to access invalid memory . This happened because we overwrote the return address with some garbage which didn't point to any valid memory. We can see this value with `x/wx $eip`.
 ```
 gef➤  x/wx $eip
 0x6261617a:	Cannot access memory at address 0x6261617a
