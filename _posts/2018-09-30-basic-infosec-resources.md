@@ -26,7 +26,9 @@ tags: ['beginner','reading-material']
 # Web Exploitation
   * [Web hacker's handbook](https://archive.org/download/TheWebApplicationHackersHandbook2ndEdition/The%20web%20application%20hackers%20handbook%20%282nd%20Edition%29.pdf)
 
-## Important: For each category, solve previous CTF problems as many as possible.
+
+
+### Important: For each category, solve previous CTF problems as many as possible.
 
 
 
