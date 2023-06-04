@@ -2,9 +2,8 @@
 layout: post
 title: TikTok Spyware
 readtime: true
-subtitle: Written by [sh4dy](https://sh4dy.com)
+subtitle: -- written by sh4dy
 tags: [android,malware,spyware,mobile]
-
 ---
 In this post, I will provide an in-depth technical analysis of an application portraying itself as `TikTok Pro` which is a dangerous spyware.
 
