@@ -1,14 +1,14 @@
 ---
 layout: post
-title: CryptNET Ransomeware
+title: CryptNET Ransomware
 readtime: true
 subtitle: -- written by P0ch1ta
-tags: [malware,ransomeware,.NET Reversing, Malware Analysis]
+tags: [Malware,Ransomware,.NET Reversing, Malware Analysis]
 ---
 
 # Overview
 
-CryptNET is a .NET Ransomeware which has leaks at the site `http[:]//blog6zw62uijolee7e6aqqnqaszs3ckr5iphzdzsazgrpvtqtjwqryid[.]onion/`. The detials of the malware are as below.
+CryptNET is a .NET Ransomware which has leaks at the site `http[:]//blog6zw62uijolee7e6aqqnqaszs3ckr5iphzdzsazgrpvtqtjwqryid[.]onion/`. The detials of the malware are as below.
 
 # Metadata
 
