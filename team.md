@@ -11,7 +11,7 @@ subtitle:
 <hr>
 
 ### ./sh4dy
-<img src="/assets/team/sh4dy.jpeg" width="250" height="250"/> 
+<img src="/assets/team/sh4dy.png" width="250" height="250"/> 
  - Rev
  - Web3
  - Cloud
