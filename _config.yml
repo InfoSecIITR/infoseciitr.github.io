@@ -15,6 +15,7 @@ navbar-links:
   About Us: "aboutus"
   Calendar: "calendar"
   Contact: "contact"
+  Team: "team"
   Resources:
     - Tools: "tools"
     - Reading Material: "reading-material"

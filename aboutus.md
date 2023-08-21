@@ -15,4 +15,4 @@ InfoSecIITR is a group of information security enthusiasts from Indian Institute
 * Capture The Flag: We actively participate in CTFs. These are security competitions which require practical knowledge of topics like binary exploitation, reverse engineering, cryptography, web security, forensics, steganography, etc. We also organize our own Capture The Flag competitions on Backdoor in collaboration with SDSLabs. The notable ones being: BackdoorCTF (our annual flagship CTF), ScytheCTF, n00bCTF (a high-school level CTF for getting started).
 
 # How to Join?
-InfoSecIITR is an open group. Everyone (from IITR) can join in our meetings and participate with us in CTFs (subject to rules on team size in CTFs, of course). If you come regularly to the meetings, you get added to the internal Slack team.
+Recruitments take place in first year only based on results of n00bCTF after which you get added in slack and based on your performance and activity you finally enter the core team.
