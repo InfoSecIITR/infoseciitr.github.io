@@ -26,8 +26,8 @@ subtitle:
 
 <hr>
 
-### ./w4nd3r
-<img src="/assets/team/w4nd3r.jpg" width="250" height="250"/> 
+### ./it4ch1
+<img src="/assets/team/it4ch1.jpeg" width="250" height="250"/> 
  - Forensics
  - Pwn
  - Rev
@@ -70,13 +70,21 @@ subtitle:
 <hr>
 
 ### ./0s4ma
+<img src="/assets/team/0S4M4.jpeg" width="250" height="250"/> 
  - pwn rev
+
+<hr>
+
+### ./m0n4ugh7y
+<img src="/assets/team/mono.png" width="250" height="250"/> 
+ - crypto
 
 <hr>
 
 ### ./h4lo_gen
 <img src="/assets/team/h4lo_gen.jpg" width="250" height="250"/> 
  - web
+ - cloud
  - misc
 
 <hr>
@@ -109,13 +117,6 @@ subtitle:
  - web
  - pwn
  - rev
-
-<hr>
-
-### ./VictoryGod
-<img src="/assets/team/VictoryGod.jpg" width="250" height="250"/> 
- - blockchain
- - Rev
 
 <hr>
 
