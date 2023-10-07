@@ -42,14 +42,6 @@ subtitle:
 
 <hr>
 
-### ./d4v1d
-<img src="/assets/team/d4v1d.jfif" width="250" height="250"/> 
- - Web3
- - Forensics
- - Cloud
-
-<hr>
-
 ### ./gr00t
 <img src="/assets/team/Gr00t.jpg" width="250" height="250"/> 
  - Cryptography
