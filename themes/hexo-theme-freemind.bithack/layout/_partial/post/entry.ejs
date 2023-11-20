@@ -1,0 +1,18 @@
+<div class="entry">
+  <div class="row">
+	<% if (item.feature ) { %>
+           <% if (config.post_asset_folder){ %>
+  	      <div class="thumbnail"><a href="<%- config.root %><%= item.path %>"><img src="<%= item.path %><%= item.feature %>" alt="<%= item.title %>"  class="nofancybox"></a>
+           <% } else { %>
+              <div class="thumbnail"><a href="<%- config.root %><%= item.path %>"><img src="<%= item.feature %>" alt="<%= item.title %>"  class="nofancybox"></a>
+           <% } %>
+		</div>
+	<% } %>
+	<% if (item.excerpt && index) { %>
+		<%- item.excerpt %>
+	<% } else { %>
+		<%- item.content %>
+	<% } %>
+	</div>
+  <a type="button" href="<%- config.root %><%- item.path %>#more" class="btn btn-default more"><%= __('read_more') %></a>
+</div>

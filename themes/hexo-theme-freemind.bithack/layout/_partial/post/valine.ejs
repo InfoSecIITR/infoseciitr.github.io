@@ -1,0 +1,17 @@
+<div id="vcomment" class="comment"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+var valineConfig = <%- JSON.stringify(theme.valine)%>
+valineConfig.el='#vcomment';
+new Valine(valineConfig);
+    // new Valine({
+    //     el: '#vcomment',
+    //     appId: "<%= theme.valine.appid %>",
+    //     appKey: "<%= theme.valine.appkey %>",
+    //     placeholder: "<%= theme.valine.placeholder %>",
+    //     avatar:"<%= theme.valine.avatar %>",
+    //     visitor: "<%= theme.valine.visitor %>",
+    //     requiredFields: "<%= theme.valine.requiredFields %>".split(','),
+    // });
+</script>
