@@ -1,0 +1,76 @@
+# Header
+menu:
+  Home: /
+  Resources: /resources
+  Achievements: /achievements
+  About: /about
+  Blogs: /tags
+
+banner: /images/sejong.jpg
+
+author:
+  name: InfoSecIITR
+  avatar: /favicon.png
+  description: The CTF team from IIT Roorkee
+
+toc:
+  max_depth: 3 
+  min_depth: 2 
+
+comments:
+  enable: false
+  use: 'valine' # valine || disqus
+  valine:
+    appId: 
+    appKey: 
+    placeholder: Say whatever you want
+    avatar: mp 
+    pageSize: 10
+    lang: zh-en 
+    visitor: true
+    recordIP: true 
+    enableQQ: false
+    meta: "['nick', 'mail', 'link']" 
+    requiredFields: "['nick']"
+    bilibiliEmoji: true 
+  # disqus 
+  # docs: https://disqus.com/
+  disqus:
+    website: 
+    error: If you can't see the comments, you really can't see the comments
+
+dplayer:
+  enable: true
+  theme: "#b7daff"
+  autoplay: false
+  loop: false
+  mutex: true
+
+aplayer:
+  enable: true
+  theme: "#b7daff"
+  autoplay: false
+  loop: false
+  mutex: true
+  lrcType: 3
+
+mathjax:
+  enable: true
+
+polyfill:
+  enable: false
+
+
+beian: 
+
+google_analytics: 
+gauges_analytics: 
+favicon: /favicon.png
+
+
+# Social Icon
+social_icon:
+  enable: true
+  icons:
+    github  : https://github.com/InfoSecIITR/
+    twitter : https://twitter.com/infoseciitr

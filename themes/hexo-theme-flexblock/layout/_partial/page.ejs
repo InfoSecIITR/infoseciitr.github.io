@@ -1,0 +1,49 @@
+<!-- 自定义页面 -->
+
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      <%# 输出Markdown内容 %>
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <%- page.content %>
+      </section>
+
+      <%# 输出自定义友链内容 %>
+      <% if (page.layout === "links") { %>
+        <section class="page-link-container">
+          <% site.data.links.forEach(function(link) { %>
+            <div class="link-item layout-padding">
+              <a href="<%= link.link %>" title="<%= link.name %>" class="content-padding--primary soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+                <% if (link.avatar) { %>
+                <img src="<%= link.avatar %>" alt="<%= link.name %>" class="soft-size--round soft-style--box">
+                <% } %>
+                <div>
+                  <h4 class="text-ellipsis"><%= link.name %></h4>
+                  <% if (link.description) { %>
+                  <p class="text-ellipsis"><%= link.description %></p>
+                  <% } %>
+                </div>
+              </a>
+            </div>
+          <% }) %>
+        </section>
+      <% } %>
+
+      <%# 输出自定义留言板内容 %>
+      <% if (page.layout === "messages") { %>
+        <section class="page-message-container layout-padding">
+          <%- partial('../_widget/comment', { post: page }) %>
+        </section>
+      <% } %>
+    </div>
+    <div class="widget-info">
+      <%- partial("../_widget/widget-author") %>
+
+      <%- partial("../_widget/widget-notice") %>
+
+      <%- partial("../_widget/widget-categorys") %>
+
+      <%- partial("../_widget/widget-tags") %>
+    </div>
+  </article>
+</div>

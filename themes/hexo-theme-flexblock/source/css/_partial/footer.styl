@@ -1,0 +1,64 @@
+.footer {
+  width: 100%
+  padding: 20px
+}
+
+.footer-container {
+  margin: auto
+  text-align: center
+  color: var(--theme-text-primary)
+
+  a {
+    color: var(--theme-stree-color)
+    font-weight: bolder
+    transition: color 0.3s ease
+
+    &:hover {
+      color: var(--theme-text-active)
+    }
+  }
+
+  p {
+    line-height: 1.5
+    margin: 6px 0
+  }
+}
+
+.social-icons {
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  gap: 20px
+  list-style: none
+  padding-bottom: 20px
+
+  a {
+    display: block
+    text-align: center
+  }
+
+  svg.icon {
+    display: block
+    fill: var(--theme-text-low)
+    transition: fill 0.3s ease
+
+    &:hover {
+      fill: var(--theme-text-stress)
+    }
+  }
+}
+
+.social-icons a {
+  @media $mq-pc {
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+  }
+
+  @media $mq-mb {
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+  }
+}

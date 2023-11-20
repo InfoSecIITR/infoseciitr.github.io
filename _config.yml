@@ -103,7 +103,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-freemind.bithack
+theme: hexo-theme-flexblock
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

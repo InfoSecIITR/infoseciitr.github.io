@@ -1,0 +1,27 @@
+<% if (theme.aplayer.enable) { %>
+  <!-- aplayer 音频 start -->
+  <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
+  <script type="text/javascript" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+  <script type="text/javascript">
+    const aplayer = document.querySelectorAll(".aplayer-box");
+    aplayer && initaplayer(aplayer);
+    function initaplayer(els) {
+      let elsArr = Array.from(els);
+      elsArr.forEach(el => {
+        let params = {
+          container: el,
+          audio: { ...el.dataset },
+          theme: "<%= theme.aplayer.theme %>",
+          autoplay: <%= theme.aplayer.autoplay %>,
+          loop: <%= theme.aplayer.loop %>,
+          mutex: <%= theme.aplayer.mutex %>,
+        }
+        if (el.dataset.lrc) {
+          params['lrcType'] = <%= theme.aplayer.lrcType %>
+        }
+        new APlayer(params);
+      });
+    }
+  </script>
+  <!-- aplayer 音频 end -->
+  <% } %>

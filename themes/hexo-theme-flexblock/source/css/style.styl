@@ -1,0 +1,231 @@
+@import "_util/variables"
+@import "_util/mixins"
+@import "_util/theme"
+
+// 解决ios下overflow: hidden后仍然能滚动的问题，隐藏滚动条
+::-webkit-scrollbar {
+  display: none;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a,
+abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q,
+s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul,
+li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font-size: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  font-size: var(--font-base-size);
+  line-height: var(--font-base-lh);
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-size: var(--font-base-size);
+  line-height: var(--font-base-lh);
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+a:active, a:hover {
+  outline: 0;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+i, em, dfn {
+  font-style: italic;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.center-bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.layout-padding {
+  padding: var(--layout-padding);
+}
+
+.layout-margin {
+  margin: var(--layout-padding);
+}
+
+.layout-block {
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-padding--large {
+  padding: var(--content-large-padding);
+}
+
+.content-padding--primary {
+  padding: var(--content-primary-padding);
+}
+
+[class*=soft-size--] {
+  &.soft-size--large {
+    --radius: var(--soft-large-radius);
+  }
+
+  &.soft-size--primary {
+    --radius: var(--soft-primary-radius);
+  }
+
+  &.soft-size--small {
+    --radius: var(--soft-small-radius);
+  }
+
+  &.soft-size--round {
+    --radius: 50%;
+  }
+}
+
+[class*=soft-style--] {
+  transition: border-radius 0.3s ease, box-shadow 0.3s ease, background-image 0.3s ease;
+
+  &.soft-style--box {
+    soft-box(var(--radius));
+  }
+  
+  &.soft-style--hover:hover {
+    soft-box(var(--radius));
+  }
+
+  &.soft-style--active:active {
+    soft-box--active(var(--radius));
+  }
+}
+
+.root-container {
+  background-color: var(--theme-bg-primary)
+}
+
+.body-container {
+  position: relative
+  padding: var(--layout-padding) 0
+}
+
+.back-to-top-fixed {
+  position: fixed
+  cursor: pointer
+  transition: opacity 0.3s ease, transform 0.3s ease
+  z-index: 10
+  opacity: 0
+  width: 60px
+  height: 60px
+  right: 40px
+  bottom: 40px
+  padding: 12px
+  transform: translate3d(0, 100%, 0)
+
+  &:hover .icon-back-to-top {
+    fill: var(--theme-text-stress)
+  }
+
+  &.show {
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+  }
+
+  .icon-back-to-top {
+    fill: var(--theme-text-low)
+    transition: fill 0.3s ease
+  }
+}
+
+
+// category && tag
+.wrap-list {
+  display: flex
+  flex-wrap: wrap
+  margin: 18px -8px 0
+
+  &.light a {
+    color: var(--theme-text-primary)
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease
+
+    &:hover {
+      soft-box(var(--soft-small-radius))
+    }
+
+    &:active {
+      soft-box--active(var(--soft-small-radius))
+    }
+  }
+
+  &.dark a {
+    border-radius: 20px
+    color: var(--theme-text-light)
+    transition: background-color 0.3s ease, color 0.3s ease
+
+    &:hover {
+      color: var(--theme-text-active)
+      background-color: var(--theme-bg-primary)
+    }
+  }
+
+  a {
+    display: block
+    padding: 4px 8px
+    letter-spacing: 1.5px
+  }
+}
+
+@import "_partial/nav"
+@import "_partial/header"
+@import "_partial/footer"
+@import "_partial/card"
+@import "_partial/pagination"
+@import "_partial/content"
+@import "_partial/page"

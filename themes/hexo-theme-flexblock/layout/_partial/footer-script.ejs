@@ -1,0 +1,106 @@
+<!-- aplayer -->
+<% if (page.aplayer) { %>
+<%- partial('../plug-in/aplayer') %>
+<% } %>
+
+<!-- dplayer -->
+<% if (page.dplayer) { %>
+<%- partial('../plug-in/dplayer') %>
+<% } %>
+
+<!-- copy button  -->
+<%- partial('../plug-in/clipboard') %>
+
+
+<%# Gaug.es Analytics %>
+<% if (theme.gauges_analytics) { %>
+  <!-- Gaug.es Analytics START -->
+  <script type="text/javascript">
+    var _gauges = _gauges || [];
+    (function () {
+      if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+        return console.log("本地调试");
+      }
+      var t = document.createElement('script');
+      t.type = 'text/javascript';
+      t.async = true;
+      t.id = 'gauges-tracker';
+      t.setAttribute('data-site-id', '<%= theme.gauges_analytics %>');
+      t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
+      t.src = 'https://d36ee2fcip1434.cloudfront.net/track.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+  <!-- Gaug.es Analytics End -->
+<% } %>
+  
+<%# Google Analytics %>
+<% if (theme.google_analytics) { %>
+  <!-- Google Analytics START -->
+  <script type="text/javascript">
+    (function() {
+      if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+        return console.log("本地调试");
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      let script = document.createElement("script")
+
+      script.onload = function() {
+        gtag('js', new Date());
+        gtag('config', "<%= theme.google_analytics %>");
+      }
+
+      script.src = "https://www.googletagmanager.com/gtag/js?id=<%= theme.google_analytics %>"
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(script, s);
+    })()
+  </script>
+  <!-- Google Analytics End -->
+<% } %>
+  
+<%# Baidu Analytics %>
+<% if (theme.baidu_analytics) { %>
+  <!-- Baidu Analytics START -->
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+        return console.log("本地调试");
+      }
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?<%= theme.baidu_analytics %>";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <!-- Baidu Analytics End -->
+<% } %>
+  
+<%# Tencent Analytics %>
+<% if (theme.tencent_analytics) { %>
+  <!-- Tencent Analytics START -->
+  <script>
+      var _mtac = {"performanceMonitor":1};
+      (function() {
+        if (window.location.hostname === "localhost" || window.location.hostname.startsWith("192.168")) {
+          return console.log("本地调试");
+        }
+        var mta = document.createElement("script");
+        mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+        mta.setAttribute("name", "MTAH5");
+        mta.setAttribute("sid", "<%= theme.tencent_analytics %>");
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(mta, s);
+      })();
+  </script>
+  <!-- Tencent Analytics End -->
+<% } %>
+
+<%- js('js/script') %>

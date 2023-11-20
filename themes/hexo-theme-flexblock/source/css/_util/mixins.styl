@@ -1,0 +1,26 @@
+soft-text() {
+  color: var(--theme-text-primary);
+  text-shadow:
+    2px 2px 4px var(--theme-bg-shadow),
+    -2px -2px 4px var(--theme-bg-high);
+}
+
+// Soft style
+soft-box($radius) {
+  overflow: hidden;
+  border-radius: $radius;
+  background-color: var(--theme-bg-primary);
+  box-shadow:
+    var(--soft-shadow) var(--soft-shadow) calc(var(--soft-shadow) * 2) var(--theme-bg-shadow),
+    calc(-1 * var(--soft-shadow)) calc(-1 * var(--soft-shadow)) calc(var(--soft-shadow) * 2) var(--theme-bg-high);
+}
+
+soft-box--active($radius) {
+  overflow: hidden;
+  border-radius: $radius;
+  background-color: var(--theme-bg-primary);
+  background-image: linear-gradient(145deg, var(--theme-text-active1), var(--theme-text-active2));
+  box-shadow:
+    inset var(--soft-shadow) var(--soft-shadow) calc(var(--soft-shadow) * 2) var(--theme-bg-shadow),
+    inset calc(-1 * var(--soft-shadow)) calc(-1 * var(--soft-shadow)) calc(var(--soft-shadow) * 2) var(--theme-bg-high);
+}

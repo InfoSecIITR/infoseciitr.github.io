@@ -1,0 +1,106 @@
+
+<!-- header container -->
+<header class="header-container<%= is_post() ? ' post' : '' %>">
+  <% if (page.cover || theme.banner) { %>
+    <div class="post-image" style="<%= `background-image: url(${page.cover || theme.banner})` %>"></div>
+  <% } %>
+
+  <%- partial('_partial/nav', null, {cache: !config.relative_link}) %>
+
+  <%# index container %>
+  <% if (is_home()) { %>
+    <div class="header-content">
+      <div class="post-text layout-block layout-padding">
+        <h1 class="title-wrap"><%= config.title %></h1>
+        <% if (config.subtitle) { %>
+          <h2 class="title-sub-wrap"><%= config.subtitle %></h2>
+        <% } %>
+      </div>
+    </div>
+  <% } %>
+
+  <%# archive container %>
+  <% if (is_archive()) { %>
+    <div class="header-content">
+      <div class="post-text layout-block layout-padding">
+        <h1 class="title-wrap">归档</h1>
+        <h2 class="title-sub-wrap">共有<%= site.posts.length %>篇文章</h2>
+      </div>
+    </div>
+  <% } %>
+
+  <%# category banner %>
+  <% if (is_category()) { %>
+    <%
+      var length = 0;
+      site.categories.each(function (categorie) {
+        if (categorie.name === page.category) length = categorie.length
+      });
+    %>
+    <div class="header-content">
+      <div class="post-text layout-block layout-padding">
+        <h1 class="title-wrap"><%= page.category %></h1>
+        <h2 class="title-sub-wrap">当前分类下共有<%= length %>篇文章</h2>
+      </div>
+    </div>
+  <% } %>
+
+  <%# tag banner %>
+  <% if (is_tag()) { %>
+    <%
+      var length = 0;
+      site.tags.each(function (tag) {
+        if (tag.name === page.tag) length = tag.length
+      });
+    %>
+    <div class="header-content">
+      <div class="post-text layout-block layout-padding">
+        <h1 class="title-wrap"><%= page.tag %></h1>
+        <h3 class="title-wrap"> <%= length %> Articles</h3>
+      </div>
+    </div>
+  <% } %>
+
+  <%# post banner %>
+  <% if (is_post()) { %>
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap"><%= page.title %></h1>
+          <h2 class="title-sub-wrap">
+            <strong><%= page.author || config.author %></strong>
+            <span>Posted on</span>
+            <%- partial("../_widget/date", { class_name: 'article-date', post: page, date_format: null }) %>
+          </h2>
+          <% if ( date(page.updated, null) != date(page.date, null) ) { %>
+            <h2 class="last-time">
+              <span>Last updated on</span>
+              <%- partial("../_widget/updated", { class_name: 'article-updated', post: page, date_format: null }) %>
+            </h2>
+          <% } %>
+          <% if ( theme.comments.enable && theme.comments.use == "valine" && theme.comments.valine.visitor ) { %>
+            <h2 id="<%= url_for(page.path) %>" class="title-sub-wrap leancloud_visitors" data-flag-title="<%= page.title %>">
+              <em>Article views</em>
+              <i class="leancloud-visitors-count"></i>
+            </h2>
+          <% } %>
+          <%- partial("../_widget/category", { page: page, class_name: 'dark' }) %>
+          <%- partial("../_widget/tag", { page: page, class_name: 'dark' }) %>
+        </div>
+      </div>
+    </div>
+  <% } %>
+
+  <%# page banner %>
+  <% if (is_page()) { %>
+    <div class="header-content">
+      <div class="post-text layout-block layout-padding">
+        <h1 class="title-wrap"><%= page.title %></h1>
+        <% if (page.subtitle) { %>
+          <h2 class="title-sub-wrap"><%= page.subtitle %></h2>
+        <% } %>
+      </div>
+    </div>
+  <% } %>
+  
+</header>
