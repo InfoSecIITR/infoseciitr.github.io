@@ -1,0 +1,114 @@
+slogan: "We love playing CTFs!"
+
+show_heart: true
+
+show_slogan: true
+
+menu:
+  - title: Blogs
+    url: archives
+    intro: "All the articles."
+  
+  - title: Resources
+    url: resources
+    intro: "Resources"
+  
+  - title: Achievements
+    url: achievements
+    intro: "Achievements"
+  
+  - title: Members
+    url: members
+    intro: "Members"
+    # icon: "fa fa-archive"
+  # - title: Categories
+  #   url: categories
+  #   intro: "All the categories."
+    # icon: "fa fa-folder"
+  # - title: Tags
+  #   url: tags
+  #   intro: "All the tags."
+    # icon: "fa fa-tags"
+  # - title: About
+  #   url: about
+  #   intro: "About me."
+    # icon: "fa fa-user"
+  # - title: RSS
+  #   url: atom.xml
+  #   intro: "Subscribe me."
+    # icon: "fa fa-user"
+
+links:
+  - title: "Our GitHub"
+    url: https://github.com/InfoSecIITR
+    intro: "Our GitHub Account"
+    icon: "fa fa-github"
+
+  - title: "Our LinkedIn Page"
+    url: https://www.linkedin.com/company/infoseciitr/
+    intro: "Our LinkedIn page."
+    icon: "fa fa-linkedin"
+  
+  - title: "Our Twitter"
+    url: https://twitter.com/infoseciitr
+    intro: "Our Twitter account."
+    icon: "fa fa-twitter"
+  
+  - title: "Contact Us"
+    url: "mailto:infoseciitr@gmail.com"
+    intro: "Our email."
+    icon: "fa fa-envelope"
+    
+widgets:
+- search
+- category
+- tagcloud
+- recent_posts
+- links
+
+rss: atom.xml
+fancybox: true
+favicon: favicon.png
+#duoshuo_shortname: 
+
+
+# Analytics
+google_analytics:
+  enable: true
+  siteid: UA-70812759-1
+
+
+# search
+#swiftype_key: ZP2ZSuHgipSZfRyU8uTR
+
+#valine
+valine: 
+  enable: false
+  appId: 'xxx'
+  appKey: 'xxx'
+  placeholder: ""
+  visitor: false
+  avatar: 'monsterid'
+  requiredFields: ['nick','mail']
+  pageView: false
+  
+#waline
+waline:
+  enable: false
+  serverURL: ''
+  pageview: false
+  lang: en
+  dark: true
+  requiredMeta: ['nick', 'mail']
+  locale:
+    placeholder: 'Comment with Email address will get notification when replied'
+
+gitalk:
+  enable: false
+  clientID: ''
+  clientSecret: ''
+  repo: ''
+  owner: ''
+  admin: ['']
+  id: location.pathname
+  distractionFreeMode: true
