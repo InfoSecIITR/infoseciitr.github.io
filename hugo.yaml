@@ -1,5 +1,5 @@
 # Hugo configuration file
-title: My Site
+title: InfoSecIITR
 
 # import hextra as module
 module:
@@ -18,39 +18,49 @@ markup:
 
 menu:
   main:
-    - name: Docs
-      pageRef: /docs
+    - name: Blogs
+      pageRef: /blogs
       weight: 1
+    - name: Resources
+      pageRef: /resources
+      weight: 2
+    - name: CTF Writeups
+      weight: 3
+      pageRef: /ctf-writeups
     - name: About
       pageRef: /about
-      weight: 2
-    - name: Contact ↗
-      url: "https://github.com/imfing"
-      weight: 3
-    - name: Search
       weight: 4
+    - name: Search
+      weight: 5
       params:
         type: search
     - name: GitHub
-      weight: 5
-      url: "https://github.com/imfing/hextra-starter-template"
+      weight: 6
+      url: "https://github.com/InfoSecIITR"
       params:
         icon: github
     - name: Twitter
-      weight: 6
-      url: "https://twitter.com/"
+      weight: 7
+      url: "https://twitter.com/InfoSecIITR"
       params:
         icon: x-twitter
-
+    - name: Contact ↗
+      url: "mailto:infoseciitr@gmail.com"
+      weight: 8
 params:
   navbar:
     displayTitle: true
-    displayLogo: false
-
+    displayLogo: true
+    logo:
+      path: logo.png
+      dark: logo.png
+      link: /
+      width: 40
+      height: 20
   footer:
     displayCopyright: false
-    displayPoweredBy: true
+    displayPoweredBy: false
 
   editURL:
-    enable: true
+    enable: false
     base: "https://github.com/imfing/hextra-starter-template/edit/main/content"

@@ -7,7 +7,7 @@
 
 🐣 Minimal template for getting started with [Hextra](https://github.com/imfing/hextra)
 
-![hextra-template](https://github.com/imfing/hextra-starter-template/assets/5097752/c403b9a9-a76c-47a6-8466-513d772ef0b7)
+![hextra-template](https://github.com/imfing/hextra-starter-template/blogs/assets/5097752/c403b9a9-a76c-47a6-8466-513d772ef0b7)
 
 [🌐 Demo ↗](https://imfing.github.io/hextra-starter-template/)
 
@@ -15,7 +15,7 @@
 
 Use this template to create your own repository:
 
-<img src="https://docs.github.com/assets/cb-77734/mw-1440/images/help/repository/use-this-template-button.webp" width=400 />
+<img src="https://docs.github.com/blogs/assets/cb-77734/mw-1440/images/help/repository/use-this-template-button.webp" width=400 />
 
 You can also quickly start developing using the following online development environment:
 
@@ -40,7 +40,7 @@ For details, see [Publishing with a custom GitHub Actions workflow](https://docs
 
 Note: in the settings, make sure to set the Pages deployment source to **GitHub Actions**:
 
-<img src="https://github.com/imfing/hextra-starter-template/assets/5097752/99676430-884e-42ab-b901-f6534a0d6eee" width=600 />
+<img src="https://github.com/imfing/hextra-starter-template/blogs/assets/5097752/99676430-884e-42ab-b901-f6534a0d6eee" width=600 />
 
 [Run the workflow manually](https://docs.github.com/en/actions/using-workflows/manually-running-a-workflow) if it's not triggered automatically.
 
@@ -54,7 +54,7 @@ Note: in the settings, make sure to set the Pages deployment source to **GitHub 
 
 Override the configuration:
 
-<img src="https://github.com/imfing/hextra-starter-template/assets/5097752/e2e3cecd-c884-47ec-b064-14f896fee08d" width=600 />
+<img src="https://github.com/imfing/hextra-starter-template/blogs/assets/5097752/e2e3cecd-c884-47ec-b064-14f896fee08d" width=600 />
 
 ## Local Development
 
