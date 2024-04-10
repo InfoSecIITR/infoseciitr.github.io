@@ -13,5 +13,5 @@ We're a bunch of information security enthusiasts from the Indian Institute of T
   {{< card link="about" title="About" icon="user" >}}
   {{< card link="achievements" title="Achievements" icon="terminal" >}}
   {{< card link="tools" title="Tools" icon="collection" >}}
-  {{< card link="resources" title="Resources" icon="newspaper" >}}
+  {{< card link="rsrcs" title="Resources" icon="newspaper" >}}
 {{< /cards >}}

@@ -22,7 +22,7 @@ menu:
       pageRef: /blogs
       weight: 1
     - name: Resources
-      pageRef: /resources
+      pageRef: /rsrcs
       weight: 2
     - name: CTF Writeups
       weight: 3
