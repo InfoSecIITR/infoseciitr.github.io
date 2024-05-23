@@ -10,6 +10,7 @@ toc: true
   {{< card link="domath" title="BYU CTF | Do Math!" icon="pencil" >}}
   {{< card link="give_up" title="BYU CTF | Give Up" icon="pencil" >}}
   {{< card link="not_again" title="BYU CTF | Not again! I've been BitLockered out of my own computer!" icon="pencil" >}}
+  {{< card link="not_a_problem" title="BYU CTF | Not A Problem" icon="pencil" >}}
   {{< card link="notsure" title="BYU CTF | Not Sure I'll Recover From This" icon="pencil" >}}
   {{< card link="random" title="BYU CTF | Random" icon="pencil" >}}
   {{< card link="times" title="BYU CTF | times" icon="pencil" >}}
