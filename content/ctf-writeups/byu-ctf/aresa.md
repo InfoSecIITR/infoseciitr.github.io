@@ -1,6 +1,6 @@
 ---
 layout: post
-title: BYUCTF 2024 | Are S A?-writeup
+title: BYUCTF 2024 | Are S A-writeup
 date: 2024-05-23
 tags: ['BYUCTF24']
 ---
