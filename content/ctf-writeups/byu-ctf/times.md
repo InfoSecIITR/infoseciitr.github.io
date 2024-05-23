@@ -3,6 +3,7 @@ layout: post
 title: BYUCTF 2024 | times-writeup
 date: 2024-05-23
 tags: ['BYUCTF24']
+maths: True
 ---
 
 # crypto/times [154 Solves] 🩸

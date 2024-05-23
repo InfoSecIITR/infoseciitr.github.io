@@ -3,6 +3,7 @@ layout: post
 title: BYUCTF 2024 | Are S A-writeup
 date: 2024-05-23
 tags: ['BYUCTF24']
+math: True
 ---
 
 # crypto/Are S A? [353 Solves]
