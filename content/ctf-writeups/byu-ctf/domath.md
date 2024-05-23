@@ -3,6 +3,7 @@ layout: post
 title: BYUCTF 2024 | Do Math!-writeup
 date: 2024-05-23
 tags: ['BYUCTF24']
+math: True
 ---
 
 # crypto/Do Math! [198 Solves]
