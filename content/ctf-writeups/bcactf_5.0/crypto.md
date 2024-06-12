@@ -325,11 +325,11 @@ while True:
     key_len += 1
 ```
 
-##### $\texttt{.decode(`raw\_unicode\_escape')}$
+##### `.decode('raw_unicode_escape')`
 Since we are using the length extension attack, we have to use some $\text{NULL bytes}$ and some other $\text{bytes}$ for padding. Here is what the final script payload actually looks like:
 
 `b'\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x05\xe0\nconsole.log(await Deno.readTextFile("flag.txt"));'`
 
-Some of these have $\text{ASCII}$ value of more that $128$ which doesn't allow the conversion of the new script to string using $\texttt{.decode()}$ and if we pass these $\text{bytes}$ directly to $\texttt{requests}$ module's payload, it will $\text{HTMLencode}$ them and convert to string before sending it to the server. And since the server reads strings only, this will immidiately invalidate the script.  So we can't send $\text{bytes}$ and also can't encode the padding information in strings. Therefore, we will have to use $\texttt{.decode(`raw\_unicode\_escape')}$ this just works in the opposite way we use raw strings in python using the `r` character.
+Some of these have $\text{ASCII}$ value of more that $128$ which doesn't allow the conversion of the new script to string using $\texttt{.decode()}$ and if we pass these $\text{bytes}$ directly to $\texttt{requests}$ module's payload, it will $\text{HTMLencode}$ them and convert to string before sending it to the server. And since the server reads strings only, this will immidiately invalidate the script.  So we can't send $\text{bytes}$ and also can't encode the padding information in strings. Therefore, we will have to use `.decode('raw_unicode_escape')` this just works in the opposite way we use raw strings in python using the `r` character.
 
 **Flag**: `bcactf{Th1S_I5_JuST_4_l1TtLe_t0o_1N5ECur3_95af828f32}`
