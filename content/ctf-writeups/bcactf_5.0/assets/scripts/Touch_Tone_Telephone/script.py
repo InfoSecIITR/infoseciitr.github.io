@@ -1,0 +1,16 @@
+# Define the input string
+input_string = "xpdReWEfno4BtvReUHxu8tBrknyUh128DolsWh1oz7cnUDygIxkCItws05vN8SdkFpTPRvVNUcRTtoS7zEUaf7ONI3n0UtVuIli9BcPfxECYmDI_4E3rJAUhYGV9wOFI"
+
+# Define the list of hexadecimal indices
+hex_indices = [
+    0x61, 0x72, 0x6c, 0x38, 0x2b, 0x6f, 0x3e, 0x59, 0x6c, 0x38, 
+    0x19, 0x6f, 0x1d, 0x72, 0x0a, 0x45, 0x59, 0x6f, 0x6c, 0x2e, 
+    0x6f, 0x6c, 0x26, 0x2b, 0x02, 0x6f, 0x01, 0x26, 0x72, 0x53, 
+    0x39, 0x04
+]
+
+# Extract characters based on the indices
+resultant_string = ''.join(input_string[index] for index in hex_indices)
+
+# Print the resultant string
+print(resultant_string)
