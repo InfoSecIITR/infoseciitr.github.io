@@ -11,7 +11,7 @@ math: True
 You'll need a miracle to get this flag. The server requires you to solve an easy addition problem, but you only get the flag if the bits magically flip to form another answer.
 
 ## Resoruces
-[main.js](./assets/scripts/misc/main.js)
+[main.js](../assets/scripts/misc/main.js)
 ```js
 const readline = require("readline");
 const fs = require("fs");
@@ -67,7 +67,7 @@ async function run() {
 
 run();
 ```
-[eslint.config.mjs](./assets/scripts/misc/eslint.config.mjs)
+[eslint.config.mjs](../assets/scripts/misc/eslint.config.mjs)
 
 ```mjs
 import globals from "globals";
@@ -159,7 +159,7 @@ How can you access variables in python?
 
 ## Resoruces
 
-[deploy.py](./assets/scripts/misc/pyjail1/deploy.py)
+[deploy.py](../assets/scripts/misc/pyjail1/deploy.py)
 ```py
 def sanitize(letter):
     print("Checking for contraband...")
@@ -200,7 +200,7 @@ What in python is evaluated to a number?
 
 ## Resoruces
 
-[main.py](./assets/scripts/misc/main.py)
+[main.py](../assets/scripts/misc/main.py)
 ```py
 def sanitize(letter):
     print("Checking for contraband...")
@@ -254,7 +254,7 @@ What in python is evaluated to a number?
 ## Resoruces
 
 
-[main.py](./assets/scripts/misc/pyjail1/main.py)
+[main.py](../assets/scripts/misc/pyjail1/main.py)
 ```py
 def sanitize(letter):
     print("Checking for contraband...")

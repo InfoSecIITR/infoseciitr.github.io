@@ -63,7 +63,7 @@ cipher 2 - bdoloeinbdjmmyg <- THIS ONE
 - I made an rsa encrypter to send my messages but it seems to be inconsistent...
 - Netcat Links: `nc challs.bcactf.com 31452`
 ### Server Files
-- [rsa_encrypter.py](./assets/scripts/RSAEncrypter/rsa_encrypter.py)
+- [rsa_encrypter.py](../assets/scripts/RSAEncrypter/rsa_encrypter.py)
 
 ## Encryption
 - There is an `encode` function that takes the flag as `plaintext`, generates random `p` and `q` and encrypts the flag using RSA with `e = 3`. It returns the `ciphertext` and `modulus`.
@@ -71,7 +71,7 @@ cipher 2 - bdoloeinbdjmmyg <- THIS ONE
 
 ## Decryption
 ### Scripts
-- [solve.py](./assets/scripts/RSAEncrypter/solve.py)
+- [solve.py](../assets/scripts/RSAEncrypter/solve.py)
 ### Explanation
 - So, after getting 3 results of `encode` we use Chinese Remainder Theorem to get `m^3^ mod (n1*n2*n3)` which is `m^3^` itself as `n1*n2*n3` is 3072 bits long, way bigger than `m^3^`.
 - Now that we have `m^3^` we can simply find its cube root to get the `plaintext`
@@ -88,7 +88,7 @@ cipher 2 - bdoloeinbdjmmyg <- THIS ONE
 - After realizing how insecure the systems of many companies are (they're always getting hacked), I decided to start offering Encryption as a Service (EaaS). With such a strong guarantee of security, I'll even give you the source code AND my encrypted super secret flag.
 - Netcat Links: `nc challs.bcactf.com 31704`
 ### Server Files
-- [server.py](./assets/scripts/Encryptor-Shop/server.py)
+- [server.py](../assets/scripts/Encryptor-Shop/server.py)
 
 ## Encryption
 - The server generates 3 large primes of order 1024 bits `p,q,r`.
@@ -98,7 +98,7 @@ cipher 2 - bdoloeinbdjmmyg <- THIS ONE
 
 ## Decryption
 ### Server Files
-- [solve.py](./assets/scripts/Encryptor-Shop/solve.py)
+- [solve.py](../assets/scripts/Encryptor-Shop/solve.py)
 ### Explanation
 - Since we have `p*q` and now `p*r` , we can use gcd to get the prime `p`. 
 - Now we can extract `r` from the second modulus and solve the RSA since we have both primes.
@@ -115,7 +115,7 @@ cipher 2 - bdoloeinbdjmmyg <- THIS ONE
 - I made this cool service that lets you protect your secrets with state-of-the-art encryption. It's so secure that we don't even tell you the key we used to encrypt your message!
 - Netcat Link: `nc challs.bcactf.com 31594`
 ### Server Files
-- [server.py](./assets/scripts/cha-cha-slide/server.py)
+- [server.py](../assets/scripts/cha-cha-slide/server.py)
 
 ## Encryption
 - The server is using `ChaCha20` for enryption which is a stream cipher.
@@ -130,7 +130,7 @@ cipher 2 - bdoloeinbdjmmyg <- THIS ONE
 
 ## Decryption
 ### Scripts
-- [solve.py](./assets/scripts/cha-cha-slide/solve.py)
+- [solve.py](../assets/scripts/cha-cha-slide/solve.py)
 ### Explanation
 - First we recieve the encrypted secret message.
 - Then we send as many '\x00' bytes as the length of the ciphertext.
@@ -148,8 +148,8 @@ cipher 2 - bdoloeinbdjmmyg <- THIS ONE
 ## Source
 - My friend seems to be communicating something but I can't make out anything. Why do we live so close to Chernobyl anyways?
 ### Server Files
-- [message.py](./assets/scripts/rad-be-damned/message.py)
-- [output.txt](./assets/scripts/rad-be-damned/output.txt)
+- [message.py](../assets/scripts/rad-be-damned/message.py)
+- [output.txt](../assets/scripts/rad-be-damned/output.txt)
 
 ## Encryption
 - The script reads the flag from a file and uses it as `plaintext`
@@ -161,11 +161,11 @@ cipher 2 - bdoloeinbdjmmyg <- THIS ONE
 
 ## Decryption
 ### Scripts
-- [solve.py](./assets/scripts/rad-be-damned/solve.py)
+- [solve.py](../assets/scripts/rad-be-damned/solve.py)
 ### Explanation
 - As this is a stream cipher we don't need to reverse or understand the `encrypt` function as we could just brute the byte.
 - First we work on the `rad` function which is randomly flipping one bit.
-    - We split the ciphertext from [output.txt](./assets/scripts/rad-be-damned/output.txt) into blocks of 12 bits and then work on them separately.
+    - We split the ciphertext from [output.txt](../assets/scripts/rad-be-damned/output.txt) into blocks of 12 bits and then work on them separately.
     - For every block , `rad` function could have either flipped one of the first 8 bits which is the byte itself or one of the last 4 bits which acts as a `checksum`.
     - First we loop for the first 8 bytes and flipping one bit in an iteration, then encrypting the byte formed by the first 8 bits using the `encrypt` function to get its result.
         - If the last 4 bits of the encryption result matches with the `checksum`, then that byte is the actual byte from the `plaintext`.
@@ -184,8 +184,8 @@ cipher 2 - bdoloeinbdjmmyg <- THIS ONE
 ## Source
 - My client is a bit picky with the primes they are willing to use...
 ### Server Files
-- [superstitious-2.py](./assets/scripts/superstitious2/superstitious-2.py)
-- [superstitious-2.txt](./assets/scripts/superstitious2/superstitious-2.txt)
+- [superstitious-2.py](../assets/scripts/superstitious2/superstitious-2.py)
+- [superstitious-2.txt](../assets/scripts/superstitious2/superstitious-2.txt)
 
 ## Encryption
 - The script generates 2 primes p and q using the mask `((1<<1024)-1)//3` which is `0b01010101....`
@@ -196,7 +196,7 @@ cipher 2 - bdoloeinbdjmmyg <- THIS ONE
 
 ## Decryption
 ### Scripts
-- [solve.py](./assets/scripts/superstitious2/solve.py)
+- [solve.py](../assets/scripts/superstitious2/solve.py)
 ### Explanation
 - So we start will `p,q = 0,0`.
 - Then we run a loop guess the next 2 bits in each iteration.
@@ -219,7 +219,7 @@ author: Thomas
 >Cinnamon Dynamics, an innovative technology company, provides a service for the public to execute short scripts to query some limited information about the company. To combat abuse, they've instated a requirement for all scripts to be approved by a company employee before they can be executed. Approved scripts are granted a "script token" that allows them to be executed an indefinite amount of times, so long as the script is not modified. Unfortunately, it seems that malicious actors have managed to circumvent the security system...  
 **Resources**:  
 Web servers: challs.bcactf.com:31077
-Static resources: [server.js](./assets/scripts/cinamon/server.js)
+Static resources: [server.js](../assets/scripts/cinamon/server.js)
 
 ## Solution
 
