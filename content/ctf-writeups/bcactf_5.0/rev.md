@@ -88,14 +88,11 @@ $$
 sum(comb(\{a_1, a_2, a_3\})) = \frac{2a_1a_2 + 2a_2a_3 + 2a_1a_3 + {a_1}^2 + {a_2}^2 + {a_3}^2 - (a_1 + a_2 + a_3)}{2}
 $$
 
-
 $$
 sum(comb(\{a_1, a_2, a_3\})) = \frac{(a_1 + a_2 + a_3)^2 - (a_1 + a_2 + a_3)}{2}  
 $$
 
-
-In general :    
-
+In general:
 $$
 sum(comb(\{a_1, a_2, a_3, ...a_n\})) = \frac{\sum{a_i}* (\sum{a_i}-1)}{2} 
 $$   
