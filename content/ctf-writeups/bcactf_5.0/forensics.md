@@ -265,7 +265,7 @@ That's a nice unanimous supreme court decision you've made public, sure would be
 
 ## Solution
 
-The solution was pretty straight forward we just find for the initials of the flag i.e. `bacactf` and highlight some of the text 
+The solution was pretty straight forward we just find for the initials of the flag i.e. `bcactf` and highlight some of the text 
 
 ![Image 1](./assets/images/forensics/23-719/23-719_1.png)
 
@@ -369,3 +369,99 @@ Now comes the part to reverse this code so we write another code to solve this t
 And that reveals us our flag:
 
 `bcactf{l3m0n_d3m0n_134v3_my_m1nd_p13a5e}`
+
+# Forensics/Chalkboard-gag-writeup
+
+## Challenge Description
+
+Matt Groening sent me an unused chalkboard gag, he says there's something special inside of it.
+
+Along with this, we are given a text file `chalkboardgag.txt`
+
+Hint : There are some unique differences in some of the lines... 
+
+## Solution 
+
+On opening the text file and skimming over it, we can observe that it a particular phrase `I WILL NOT BE SNEAKY` is written on all the lines of the file. On observing carefully, we find that there are some lines in which a particular character of `I WILL NOT BE SNEAKY` is swapped with some other character. On checking those characters, we find that they are making the flag `bca...`. So then I used the below python script to get the flag:
+
+```python
+f = open('chalkboardgag.txt', 'r') 
+f = f.read()
+
+l = f.split('\n')
+l = l[:-1]
+str = 'I WILL NOT BE SNEAKY'
+flag = ""
+for i in l:
+    if i != str:
+        for j in range(20):
+            if i[j] != str[j]:
+                flag += i[j]
+
+print(flag)
+```
+
+So the flag is `bcactf{BaRT_W0U1D_B3_PR0uD}`
+
+---
+
+# Forensics/Wiretapped
+
+## Challenge description
+
+I've been listening to this cable between two computers, but I feel like it's in the wrong format.
+
+Given file : `wiretapped.wav`
+
+Hint : A certain type of file is embedded in the .wav file - see if you can extract it
+
+## Solution 
+
+Following from the given hint, I tried to observe the hexdump of the given wav file and found the following part which looked like the starting bytes of a pcap file
+
+![Image 1](./assets/images/forensics/wiretapped/hex_image.png)
+
+Then I observed the hexdump further and concluded that `wiretapped.wav` has a pcap file embedded in it. So I extracted a pcap file named `extraacted.pcap` from `wiretapped.wav` using the below python script:
+
+```python
+g = open('wiretapped.wav', 'rb')
+g_bytes = g.read()
+
+with open('extracted.wav', 'wb') as b:
+    b.write(g_bytes[100:])
+```
+
+Now on analysing `extracted.pcap`, I found the following conversation between the host computer `192.168.1.178` and the vm `10.0.2.15` (red messages are from vm and blue ones from host computer) :
+
+![Image 2](./assets/images/forensics/wiretapped/conv.png)
+
+Hence we have got the part-1 of the flag `bcactf{listening_`. Now we have to find the part-2 of the flag from the image which can be retrieved from its bytes in the TCP stream 4. I am using the below script to do this:
+
+```python
+from scapy.all import rdpcap
+from Crypto.Util.number import *
+
+pcap = rdpcap("banayi.pcap")
+
+stream_src_IP = '192.168.1.178'
+stream_dst_IP = '10.0.2.15'
+
+stream_src_port = 5500
+stream_dst_port = 56780
+
+stream_packets = [pkt for pkt in pcap if pkt.haslayer('IP') and pkt.haslayer('TCP') and 
+               pkt['IP'].src == stream_src_IP and pkt['IP'].dst == stream_dst_IP and 
+               pkt['TCP'].sport == stream_src_port and pkt['TCP'].dport == stream_dst_port]
+
+data = b"".join(bytes(pkt['TCP'].payload) for pkt in stream_packets)
+
+part2 = data[344:-12] # removing the extra bytes(HTTP... this thing)
+
+with open('image.jpeg', 'wb') as img:
+    img.write(part2)
+```
+
+We get the below image as the second part of the flag:
+![Image 3](./assets/images/forensics/wiretapped/image.jpeg)
+
+So the complete flag is `bcactf{listening_in_a28270fb0dbfd}`

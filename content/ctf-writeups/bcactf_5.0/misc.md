@@ -325,3 +325,30 @@ locals()[chr((hash(all)>hash(chr))+(hash(all)>hash(chr))+(hash(all)>hash(chr))+(
 
 ## Flag
 `bcactf{Wr1tING_pyJaiL5_iS_hArD_f56450aadefcc}`
+
+# Misc/This is NOT the flag
+## Challenge Description
+The flag is NOT inside this file. Do NOT even bother checking.
+
+## Hint
+The flag is ASCII encoded in base 64
+
+## Resoruces
+
+[NOTflag.txt](../assets/scripts/misc/NOTflag.txt)
+```txt
+nZyenIuZhMiXtoygzoygyJfMoJmTnsaC
+```
+## Solution
+Ignoring the description, the hint clues about `base 64`, so on decoding
+
+![alt text](./assets/images/misc-This_is_NOT_the_flag/base64.png)
+
+Nothing useful... The easiest thing we could do is `XOR`, so let's try it.
+
+![alt text](./assets/images/misc-This_is_NOT_the_flag/xor.png)
+
+And we get the flag with the `key FF`.
+
+## Flag
+`bcactf{7hIs_1s_7h3_fla9}`
